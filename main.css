@@ -1,8 +1,14 @@
 .TailTalk{
-    font-size: 50px;
+    font-size: 40px;
     padding-left: 30px;
 }
 
 .img-icon{
     width: 420px;
+}
+.footer-section {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-top: 10px;
 }
