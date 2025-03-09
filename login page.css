@@ -208,3 +208,13 @@ background: radial-gradient(circle, rgba(221,212,204,1) 3%, rgba(155,130,105,1) 
 .container.active .toggle-right{
     transform: translateX(200%);
 }
+.button-auth:hover{
+    background-color:#FCF3EA ;
+    border: 1px solid #9b8269;
+    color: #9b8269;
+}
+.button-auth:hover {
+    background-color: #FCF3EA !important;
+    border: 2px solid #9b8269 !important;
+    color: #9b8269 !important;
+}
