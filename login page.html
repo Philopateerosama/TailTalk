@@ -7,10 +7,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="login page.css">
     <title>Login Page</title>
+    <style>
+        .password-container {
+            position: relative;
+        }
+
+        .container input[type="checkbox"] {
+            display: none;
+        }
+
+        .checkmark {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 20px;
+            color: #9b8269;
+        }
+
+        .checkmark::before {
+            content: "\f070"; /* FontAwesome eye-slash icon */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+        }
+
+        .container input[type="checkbox"]:checked + .checkmark::before {
+            content: "\f06e"; 
+        }
+    </style>
 </head>
 
 <body>
-
     <div class="container" id="container">
         <div class="form-container sign-up">
             <form>
@@ -24,7 +52,13 @@
                 <span>or use your email for registration</span>
                 <input type="text" placeholder="Name">
                 <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
+                <div class="password-container" style="width: 305px;">
+                    <input type="password" placeholder="Password" id="signup-password">
+                    <label class="container">
+                        <input type="checkbox" id="signup-toggle-password">
+                        <div class="checkmark"></div>
+                    </label>
+                </div>
                 <a href="login page.html">
                     <button type="button" class="button-auth" style="background-color: #9b8269; color:#DAD2BC; font-weight: 700;" disabled>Sign Up</button>
                 </a>
@@ -41,13 +75,21 @@
                 </div>
                 <span>or use your email password</span>
                 <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
+                <div class="password-container" style="width: 305px;">
+                    <input type="password" placeholder="Password" id="signin-password">
+                    <label class="container">
+                        <input type="checkbox" id="signin-toggle-password">
+                        <div class="checkmark"></div>
+                    </label>
+                </div>
                 <a href="#">Forget Your Password?</a>
                 <a href="home page.html">
                     <button type="button" class="button-auth" style="background-color: #9b8269; color:#DAD2BC; font-weight: 700;" disabled>Sign In</button>
                 </a>
             </form>
         </div>
+
+        <!-- Toggle Container -->
         <div class="toggle-container">
             <div class="toggle">
                 <div class="toggle-panel toggle-left">
@@ -64,6 +106,19 @@
         </div>
     </div>
 
+    <script>
+        // Toggle password visibility for Sign In
+        document.getElementById('signin-toggle-password').addEventListener('change', function () {
+            var passwordInput = document.getElementById('signin-password');
+            passwordInput.type = this.checked ? 'text' : 'password';
+        });
+
+        // Toggle password visibility for Sign Up
+        document.getElementById('signup-toggle-password').addEventListener('change', function () {
+            var passwordInput = document.getElementById('signup-password');
+            passwordInput.type = this.checked ? 'text' : 'password';
+        });
+    </script>
     <script src="login page.js"></script>
 </body>
 
