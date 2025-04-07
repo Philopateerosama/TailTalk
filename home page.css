@@ -1,28 +1,97 @@
-.TailTalk{
+.TailTalk {
     color: #5F5449;
     font-size: 30px;
 }
-.carO{
+.carO {
     padding-top: 270px;
     width: auto;
-    
 }
-.carOu{
+.carOu {
     background-color: #9B8269;
-    
 }
-.market1{
-    padding-top: 20px;
+.market1 {
+    padding-top: 150px;
     padding-left: 15px;
-    display: inline-block
-
+    display: inline-block;
 }
-.market2{
-   left: 30%;
-   padding-left:130px;
-   padding-right: 0%;
+.market2 {
+    left: 30%;
+    padding-left: 130px;
+    padding-right: 0%;
 }
-.market3{
-    
+.market3 {
     padding-left: 500px;
 }
+.carousel-item {
+    position: relative;
+    overflow: hidden;
+    height: 500px;
+}
+.carousel-item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('/TailTalk/img/img-1.jpeg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(20px);
+    z-index: 0;
+}
+.carousel-item img {
+    position: relative;
+    z-index: 1;
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+}
+.autoRotate {
+    animation: autoRotateAnimation 5s linear infinite;
+}
+@keyframes autoRotateAnimation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.autonShow {
+    animation: autoShowAnimation 1s both;
+}
+@keyframes autoShowAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(200px) scale(0.3);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+.autoBlur {
+    animation: autoBlurAnimation 3s both;
+}
+@keyframes autoBlurAnimation {
+    0% {
+        filter: blur(40px);
+    }
+    45%, 55% {
+        filter: blur(0px);
+    }
+    100% {
+        filter: blur(40px);
+    }
+}
+.circle-image {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto;
+  }
+.feture-m{
+margin-top: 10%;
+};
+
+  

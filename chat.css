@@ -1,0 +1,163 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    
+}
+
+/* Sidebar styles */
+.sidebar {
+    background-image: url("/TailTalk/img/chat-back.jpg");
+    width: 30%;
+    max-width: 300px; /* Limit sidebar width */
+    color: #DDD4CC;
+    padding: 20px;
+    overflow-y: auto; /* Allow scrolling if contacts overflow */
+}
+
+.sidebar h2 {
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s;
+}
+
+.sidebar ul li:hover {
+    border: 1px solid #DDD4CC;
+
+}
+
+.sidebar ul li.active {
+    border: 1px solid #DDD4CC;
+}
+
+/* Chat window styles */
+.chat-window {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-image: url("/TailTalk/img/chat-back.jpg");
+    background-size: cover;
+    backdrop-filter: blur(500px)!important; /* Increase blur effect by 10 times */
+    -webkit-backdrop-filter: blur(500px) !important; /* For Safari support */
+    filter: blur(0); /* Optional: Remove blur from the background image itself */
+}
+
+.chat-header {
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Safari */
+    background-color: rgba(255, 255, 255, 0.1); /* شفافية خفيفة */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: #9B8269;
+    padding: 20px;
+}
+
+
+
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.chat-input {
+    display: flex;
+    padding: 10px;
+    background-color: #DDD4CC;
+    border-top: 1px solid #ddd;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #9B8269;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.chat-input button {
+    padding: 10px 20px;
+    background-color: #9B8269;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.chat-input button:hover {
+    background-color:#5F5449;
+}
+
+/* Message styling */
+.message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    max-width: 70%;
+}
+
+.message.sent {
+    background-color: #AFA193;
+    margin-left: auto;
+    text-align: right;
+}
+
+.message.received {
+    background-color: #FCF3EA;
+    margin-right: auto;
+    text-align: left;
+}
+.sideLeft{
+    padding-left:10px ;
+    border: 13px solid #DDD4CC;
+    border-radius: 5%;
+}
+.water-blur-bg {
+    background: url('/TailTalk/img/chat-back.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .water-blur-bg::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.05);
+    mix-blend-mode: screen;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+    padding-top: 30vh;
+    font-size: 2rem;
+    text-shadow: 0 0 10px rgba(0,0,0,0.6);
+  }
+ 
+  

@@ -17,3 +17,6 @@
     border: 2px solid #9b8269 !important;
     color: #9b8269 !important;
 }
+body{
+    transition:all .50s ease;
+}

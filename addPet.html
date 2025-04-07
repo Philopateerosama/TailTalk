@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap">
+    <link rel="stylesheet" href="addPet.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <title>add pet</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .nav {
+            width: 200px;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+        }
+        .nav a.active {
+            font-weight: bold;
+        }
+        .section {
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <header data-bs-theme="dark">
+        <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #e0d9d2; padding-bottom: 10px;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                    <b><span class="TailTalk">TailTalk</span></b>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarButtons">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarButtons">
+                    <div class="ms-auto d-flex gap-3">
+                        <a href="adopt.html" class="nav-link" style="color: #5F5449; padding-right: 10px;">Adopt</a>
+                        <a href="chat.html" class="nav-link" style="color: #5F5449; padding-right: 10px;">Chat</a>
+                        <a href="veterinary.html" class="nav-link" style="color: #5F5449; padding-right: 10px;">Veterinary Services</a>
+                        <a href="events.html" class="nav-link" style="color: #5F5449; padding-right: 10px;">Events</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container d-flex">
+        <div class="nav nav-edit" style="  width: 386px;
+    background: linear-gradient(to right, #5F5449, #9B8269);
+    color: #fff;">
+            <img src="logo.png" alt="" width="30" height="24" class="d-inline-block align-text-top">TailTalk
+           <div>
+            <h1 data-aos="fade-right" data-aos-duration="1400" data-aos-delay="200">Help Your Dog Find a Loving New Home ❤️</h1>
+           </div>
+           <div>
+            <p data-aos="fade-right" data-aos-duration="1400" data-aos-delay="200">
+                Sometimes life changes, but love stays.
+                If you can’t keep your dog, make sure they find a home full of warmth and care.
+                List your dog for adoption and let them meet someone who’ll love them just as much.
+                
+                </p>
+           </div>
+        </div>
+        <div class="section flex-grow-1" style="background-color: #FCF3EA;">
+            <h3 data-aos="fade-down" data-aos-duration="1400" data-aos-delay="200">Yay, we love dogs! Give us the basics about your pup.</h3>
+            <form>
+                <div class="form-group">
+                    <label for="petName">Name</label>
+                    <input type="text" class="form-control" id="petName" placeholder="Pet's name">
+                </div>
+                <div class="form-group">
+                    <label for="breed">Breed</label>
+                    <input type="text" class="form-control" id="breed" placeholder="Pet's breed">
+                </div>
+                <div class="form-group">
+                    <label for="birthday">Birthday</label>
+                    <input type="date" class="form-control" id="birthday">
+                </div>
+                <div class="form-group">
+                    <label>Gender</label><br>
+                    <select class="custom-select" id="gender">
+                        <option selected>Choose...</option>
+                        <option value="female">Female</option>
+                        <option value="male">Male</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Spayed or Neutered</label><br>
+                    <select class="custom-select" id="spayedNeutered">
+                        <option selected>Choose...</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Weight</label><br>
+                    <select class="custom-select" id="weight">
+                        <option selected>0-25 lbs</option>
+                        <option value="25-50">25-50 lbs</option>
+                        <option value="50-100">50-100 lbs</option>
+                        <option value="100+">100+ lbs</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="uploadPhoto">Upload a photo</label>
+                    <input type="file" class="form-control-file" id="uploadPhoto">
+                </div>
+                <a href="home page.html">
+                    <button type="button" class="button-auth"
+                        style="background-color: #9b8269; color:#DAD2BC; font-weight: 700;" >Add Pet</button>
+                </a>
+            </form>
+        </div>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+  // تفعيل AOS عند تحميل الصفحة
+  document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+          once: false, // الأنيميشن يحدث عند التمرير للعنصر أكثر من مرة
+          offset: 200, // المسافة التي تظهر فيها الأنيميشن بعد النزول
+          easing: 'ease-in-out', // تحسين تفاعل الأنيميشن مع التمرير
+          mirror: true, // يعيد الأنيميشن عند الرجوع
+      });
+
+      // تحديث AOS يدويًا عند التمرير
+      window.addEventListener('scroll', function() {
+          AOS.refresh();
+      });
+  });
+</script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

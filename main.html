@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" >
     <title>TailTalk</title>
     <link rel="stylesheet" href="main.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 </head>
-<body style="background: #DAD2BC; overflow-x: hidden;">
+<body style="background: #DAD2BC;">
     <nav style="background-color: #F5F1ED;">
         <div class="container-fluid" style="background-color: #e0d9d2;">
             <a class="navbar-brand" href="#">
@@ -17,22 +19,22 @@
     </nav>
     <div class="row flex-lg-row-reverse align-items-center py-5 px-5">
         <div class="col-10 col-sm-8 col-lg-6">
-            <img src="logo.png" class="d-block mx-lg-auto img-fluid img-icon" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+            <img data-aos="zoom-in-left" data-aos-duration="1400" src="logo.png" class="d-block mx-lg-auto img-fluid img-icon" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
         </div>
         <div class="col-lg-6" style="padding: 80px;">
             <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">  
-                <div ><b>TailTalk - Because Every <span style="color:#554b42;">Tail</span> Has a Story!🐾</b></div>
+                <div data-aos="fade-right" data-aos-duration="1400" data-aos-delay="200"><b>TailTalk - Because Every <span style="color:#554b42;">Tail</span > Has a Story!🐾</b></div>
             </h1>
-            <p class="lead">Discover a vibrant pet community for all animal.</p>
+            <p class="lead" data-aos="fade-right" data-aos-duration="1400" data-aos-delay="300">Discover a vibrant pet community for all animal.</p>
             <div class="d-grid gap-1 d-md-flex justify-content-md-start">
                 <a href="login page.html">
-                <button type="button" class="btn btn-lg px-4 me-md-2
-                 button-auth" style="background-color: #9b8269; color:#DAD2BC; font-weight: 700;">Click Me!</button>
+                <button data-aos="fade-up" data-aos-duration="1400" data-aos-delay="400" type="button" class="btn btn-lg px-4 me-md-2
+                 button-auth" style="background-color: #9b8269; color:#DAD2BC; font-weight: 700; transition: all 0.6s ease;">Click Me!</button>
                 </a>
             </div>
         </div>
     </div>
-    <div class="text-secondary text-center mt-4 footer-section" style="background-color: #5f5449; margin-right: 0;">
+    <div  class="text-secondary text-center mt-4 footer-section" style="background-color: #5f5449; margin-right: 0;">
         <div class="" style="padding-bottom: 1.6.6%;">
             <div class="col-lg-5 mx-auto">
                 <p class="fs-6 mb-1" style="color:#F5F1ED; font-size:12px; white-space: nowrap;">"TailTalk is a paw-some platform. Our pet family has grown happier and healthier"</p>
@@ -42,6 +44,20 @@
             </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init();
+      </script>
+      <script>
+        document.getElementById("navigate").addEventListener("click", function(event) {
+    event.preventDefault(); // يمنع التنقل الفوري
+    gsap.to("body", { opacity: 0, duration: 0.5, onComplete: () => {
+        window.location.href = "login page.html"; // انتقال بعد التأثير
+    }});
+});
+      </script>
 </body>
 </html>
