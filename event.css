@@ -86,3 +86,9 @@ body {
     border-radius: 15px; /* نفس الـ border-radius الخاص بالكارت */
     object-fit: cover; /* تجعل الصورة تغطي المساحة بالكامل بدون تشويه */
 }
+
+.button-Tail-event:hover {
+    background-color: #5F5449 !important;
+    color: #fff !important;
+    transition: all 0.8s ease-in-out !important;
+}
