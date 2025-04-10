@@ -1,6 +1,88 @@
-body{
-    background: #DAD2BC;
-}
-.button-tail-event{
-    
+body {
+    background-color: #DAD2BC;
+    font-family: Arial, sans-serif;
+    padding: 40px;
+    margin: 0;
+  }
+
+  .events-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .book {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    background-color: #e7d7c6;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  .book:hover .cover {
+    transform: translateY(0);
+  }
+
+  .front {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .front h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #9b8269;
+  }
+
+  .front span {
+    font-size: 15px;
+    color: #555;
+  }
+
+  .cover {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fafafa;
+    padding: 20px;
+    box-sizing: border-box;
+    border-top: 2px solid #ddd;
+    transform: translateY(100%);
+    transition: transform 0.4s ease-in-out;
+    overflow-y: auto;
+  }
+
+  .cover p {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.6;
+  }
+
+  /* Scrollbar styling for cover */
+  .cover::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .cover::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 5px;
+  }
+  .like-p{
+    font-size: 15px;
+    color: #444;
+    line-height: 1.6;
+  }
+  .card-img {
+    width: 100%; /* تجعل الصورة تأخذ عرض الكارت بالكامل */
+    height: 171px; /* تجعل الصورة تتناسب مع أبعادها */
+    margin-top: 10px; /* تترك مسافة صغيرة بعد الـ <span> */
+    border-radius: 15px; /* نفس الـ border-radius الخاص بالكارت */
+    object-fit: cover; /* تجعل الصورة تغطي المساحة بالكامل بدون تشويه */
 }
