@@ -5,41 +5,283 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="login page.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Login Page</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
         body {
+            background: rgb(221, 212, 204);
+            background: radial-gradient(circle, rgba(221, 212, 204, 1) 3%, rgba(155, 130, 105, 1) 68%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
             transition: all 0.5s ease;
         }
 
-        .password-container {
+        .container {
+            background-color: #FCF3EA;
+            border-radius: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+            position: relative;
+            overflow: hidden;
+            width: 768px;
+            max-width: 100%;
+            min-height: 480px;
+        }
+
+        .container p {
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0.3px;
+            margin: 20px 0;
+        }
+
+        .container span {
+            font-size: 12px;
+        }
+
+        .container a {
+            color: #333;
+            font-size: 13px;
+            text-decoration: none;
+            margin: 15px 0 10px;
+        }
+
+        .container button {
+            background-color: #5F5449;
+            color: #fff;
+            font-size: 12px;
+            padding: 10px 45px;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .container button.hidden {
+            background-color: transparent;
+            border-color: #FCF3EA;
+        }
+
+        .container form {
+            background-color: #FCF3EA;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 40px;
+            height: 100%;
+        }
+
+        .container input {
+            background-color: #eee;
+            border: none;
+            margin: 8px 0;
+            padding: 10px 15px;
+            font-size: 13px;
+            border-radius: 8px;
+            width: 100%;
+            outline: none;
+        }
+
+        .form-container {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            transition: all 0.6s ease-in-out;
+        }
+
+        .sign-in {
+            left: 0;
+            width: 50%;
+            z-index: 2;
+        }
+
+        .container.active .sign-in {
+            transform: translateX(100%);
+        }
+
+        .sign-up {
+            left: 0;
+            width: 50%;
+            opacity: 0;
+            z-index: 1;
+        }
+
+        .container.active .sign-up {
+            transform: translateX(100%);
+            opacity: 1;
+            z-index: 5;
+            animation: move 0.6s;
+        }
+
+        @keyframes move {
+            0%,
+            49.99% {
+                opacity: 0;
+                z-index: 1;
+            }
+
+            50%,
+            100% {
+                opacity: 1;
+                z-index: 5;
+            }
+        }
+
+        .social-icons {
+            margin: 20px 0;
+        }
+
+        .social-icons a {
+            border: 1px solid #ccc;
+            border-radius: 20%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 3px;
+            width: 40px;
+            height: 40px;
+        }
+
+        .toggle-container {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            transition: all 0.6s ease-in-out;
+            border-radius: 150px 0 0 100px;
+            z-index: 1000;
+        }
+
+        .container.active .toggle-container {
+            transform: translateX(-100%);
+            border-radius: 0 150px 100px 0;
+        }
+
+        .toggle {
+            background-color: #5F5449;
+            height: 100%;
+            background: linear-gradient(to right, #5F5449, #9B8269);
+            color: #fff;
+            position: relative;
+            left: -100%;
+            height: 100%;
+            width: 200%;
+            transform: translateX(0);
+            transition: all 0.6s ease-in-out;
+        }
+
+        .container.active .toggle {
+            transform: translateX(50%);
+        }
+
+        .toggle-panel {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 30px;
+            text-align: center;
+            top: 0;
+            transform: translateX(0);
+            transition: all 0.6s ease-in-out;
+        }
+
+        .toggle-left {
+            transform: translateX(-200%);
+        }
+
+        .container.active .toggle-left {
+            transform: translateX(0);
+        }
+
+        .toggle-right {
+            right: 0;
+            transform: translateX(0);
+        }
+
+        .container.active .toggle-right {
+            transform: translateX(200%);
+        }
+
+        .button-auth:hover {
+            background-color: #FCF3EA !important;
+            border: 2px solid #9b8269 !important;
+            color: #9b8269 !important;
+        }
+
+        /* Monkey Avatar Styles */
+        .monkey-avatar {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
             position: relative;
         }
 
-        .container input[type="checkbox"] {
-            display: none;
+        .monkey-avatar svg {
+            width: 100%;
+            height: 100%;
         }
 
-        .checkmark {
+        /* Password Toggle Styles */
+        .password-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .password-toggle {
             position: absolute;
             right: 10px;
             top: 50%;
             transform: translateY(-50%);
             cursor: pointer;
-            font-size: 20px;
             color: #9b8269;
         }
 
-        .checkmark::before {
-            content: "\f070";
-            /* FontAwesome eye-slash icon */
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
+        /* Monkey Eyes Animation */
+        @keyframes blink {
+            0%,
+            2%,
+            4%,
+            26%,
+            28%,
+            71%,
+            73%,
+            100% {
+                ry: 4.5;
+                cy: 31.7;
+            }
+
+            1%,
+            3%,
+            27%,
+            72% {
+                ry: 0.5;
+                cy: 30;
+            }
         }
 
-        .container input[type="checkbox"]:checked+.checkmark::before {
-            content: "\f06e";
+        .monkey-eye {
+            animation: blink 10s 1s infinite;
         }
     </style>
 </head>
@@ -48,6 +290,33 @@
     <div class="container" id="container">
         <div class="form-container sign-up">
             <form>
+                <div class="monkey-avatar">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" id="monkey">
+                        <ellipse cx="53.7" cy="33" rx="8.3" ry="8.2" fill="#89664c"></ellipse>
+                        <ellipse cx="53.7" cy="33" rx="5.4" ry="5.4" fill="#ffc5d3"></ellipse>
+                        <ellipse cx="10.2" cy="33" rx="8.2" ry="8.2" fill="#89664c"></ellipse>
+                        <ellipse cx="10.2" cy="33" rx="5.4" ry="5.4" fill="#ffc5d3"></ellipse>
+                        <g fill="#89664c">
+                            <path
+                                d="m43.4 10.8c1.1-.6 1.9-.9 1.9-.9-3.2-1.1-6-1.8-8.5-2.1 1.3-1 2.1-1.3 2.1-1.3-20.4-2.9-30.1 9-30.1 19.5h46.4c-.7-7.4-4.8-12.4-11.8-15.2">
+                            </path>
+                            <path
+                                d="m55.3 27.6c0-9.7-10.4-17.6-23.3-17.6s-23.3 7.9-23.3 17.6c0 2.3.6 4.4 1.6 6.4-1 2-1.6 4.2-1.6 6.4 0 9.7 10.4 17.6 23.3 17.6s23.3-7.9 23.3-17.6c0-2.3-.6-4.4-1.6-6.4 1-2 1.6-4.2 1.6-6.4">
+                            </path>
+                        </g>
+                        <path
+                            d="m52 28.2c0-16.9-20-6.1-20-6.1s-20-10.8-20 6.1c0 4.7 2.9 9 7.5 11.7-1.3 1.7-2.1 3.6-2.1 5.7 0 6.1 6.6 11 14.7 11s14.7-4.9 14.7-11c0-2.1-.8-4-2.1-5.7 4.4-2.7 7.3-7 7.3-11.7"
+                            fill="#e0ac7e"></path>
+                        <g fill="#3b302a">
+                            <path
+                                d="m35.1 38.7c0 1.1-.4 2.1-1 2.1-.6 0-1-.9-1-2.1 0-1.1.4-2.1 1-2.1.6.1 1 1 1 2.1"></path>
+                            <path
+                                d="m30.9 38.7c0 1.1-.4 2.1-1 2.1-.6 0-1-.9-1-2.1 0-1.1.4-2.1 1-2.1.5.1 1 1 1 2.1"></path>
+                            <ellipse cx="40.7" cy="31.7" rx="3.5" ry="4.5" class="monkey-eye"></ellipse>
+                            <ellipse cx="23.3" cy="31.7" rx="3.5" ry="4.5" class="monkey-eye"></ellipse>
+                        </g>
+                    </svg>
+                </div>
                 <h1 data-aos="fade-up" data-aos-duration="1400" data-aos-delay="200">Create Account</h1>
                 <div class="social-icons">
                     <a href="#" class="icon" data-aos="fade-up" data-aos-duration="1400" data-aos-delay="200"><i
@@ -63,12 +332,11 @@
                 <span>or use your email for registration</span>
                 <input type="text" placeholder="Name">
                 <input type="email" placeholder="Email">
-                <div class="password-container" style="width: 305px;">
+                <div class="password-container">
                     <input type="password" placeholder="Password" id="signup-password">
-                    <label class="container">
-                        <input type="checkbox" id="signup-toggle-password">
-                        <div class="checkmark"></div>
-                    </label>
+                    <span class="password-toggle" onclick="togglePassword('signup-password')">
+                        <i class="fas fa-eye-slash"></i>
+                    </span>
                 </div>
                 <a href="login page.html">
                     <button type="button" class="button-auth"
@@ -78,6 +346,33 @@
         </div>
         <div class="form-container sign-in">
             <form>
+                <div class="monkey-avatar">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" id="monkey">
+                        <ellipse cx="53.7" cy="33" rx="8.3" ry="8.2" fill="#89664c"></ellipse>
+                        <ellipse cx="53.7" cy="33" rx="5.4" ry="5.4" fill="#ffc5d3"></ellipse>
+                        <ellipse cx="10.2" cy="33" rx="8.2" ry="8.2" fill="#89664c"></ellipse>
+                        <ellipse cx="10.2" cy="33" rx="5.4" ry="5.4" fill="#ffc5d3"></ellipse>
+                        <g fill="#89664c">
+                            <path
+                                d="m43.4 10.8c1.1-.6 1.9-.9 1.9-.9-3.2-1.1-6-1.8-8.5-2.1 1.3-1 2.1-1.3 2.1-1.3-20.4-2.9-30.1 9-30.1 19.5h46.4c-.7-7.4-4.8-12.4-11.8-15.2">
+                            </path>
+                            <path
+                                d="m55.3 27.6c0-9.7-10.4-17.6-23.3-17.6s-23.3 7.9-23.3 17.6c0 2.3.6 4.4 1.6 6.4-1 2-1.6 4.2-1.6 6.4 0 9.7 10.4 17.6 23.3 17.6s23.3-7.9 23.3-17.6c0-2.3-.6-4.4-1.6-6.4 1-2 1.6-4.2 1.6-6.4">
+                            </path>
+                        </g>
+                        <path
+                            d="m52 28.2c0-16.9-20-6.1-20-6.1s-20-10.8-20 6.1c0 4.7 2.9 9 7.5 11.7-1.3 1.7-2.1 3.6-2.1 5.7 0 6.1 6.6 11 14.7 11s14.7-4.9 14.7-11c0-2.1-.8-4-2.1-5.7 4.4-2.7 7.3-7 7.3-11.7"
+                            fill="#e0ac7e"></path>
+                        <g fill="#3b302a">
+                            <path
+                                d="m35.1 38.7c0 1.1-.4 2.1-1 2.1-.6 0-1-.9-1-2.1 0-1.1.4-2.1 1-2.1.6.1 1 1 1 2.1"></path>
+                            <path
+                                d="m30.9 38.7c0 1.1-.4 2.1-1 2.1-.6 0-1-.9-1-2.1 0-1.1.4-2.1 1-2.1.5.1 1 1 1 2.1"></path>
+                            <ellipse cx="40.7" cy="31.7" rx="3.5" ry="4.5" class="monkey-eye"></ellipse>
+                            <ellipse cx="23.3" cy="31.7" rx="3.5" ry="4.5" class="monkey-eye"></ellipse>
+                        </g>
+                    </svg>
+                </div>
                 <h1>Sign In</h1>
                 <div class="social-icons">
                     <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
@@ -87,12 +382,11 @@
                 </div>
                 <span>or use your email password</span>
                 <input type="email" placeholder="Email">
-                <div class="password-container" style="width: 305px;">
+                <div class="password-container">
                     <input type="password" placeholder="Password" id="signin-password">
-                    <label class="container">
-                        <input type="checkbox" id="signin-toggle-password">
-                        <div class="checkmark"></div>
-                    </label>
+                    <span class="password-toggle" onclick="togglePassword('signin-password')">
+                        <i class="fas fa-eye-slash"></i>
+                    </span>
                 </div>
                 <a href="#">Forget Your Password?</a>
                 <a href="home page.html">
@@ -106,7 +400,7 @@
         <div class="toggle-container">
             <div class="toggle">
                 <div class="toggle-panel toggle-left">
-                    <h1  data-aos="fade-up" data-aos-duration="1400" data-aos-delay="200">Welcome Back!</h1>
+                    <h1 data-aos="fade-up" data-aos-duration="1400" data-aos-delay="200">Welcome Back!</h1>
                     <p>Enter your personal details to use all of site features</p>
                     <button class="button-auth hidden" id="login">Sign In</button>
                 </div>
@@ -123,13 +417,37 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             AOS.init({
-                duration: 1200, // Animation duration
-                once: true,     // Whether animation should happen only once
+                duration: 1200,
+                once: true,
+            });
+
+            const container = document.getElementById('container');
+            const registerBtn = document.getElementById('register');
+            const loginBtn = document.getElementById('login');
+
+            registerBtn.addEventListener('click', () => {
+                container.classList.add("active");
+            });
+
+            loginBtn.addEventListener('click', () => {
+                container.classList.remove("active");
             });
         });
+
+        function togglePassword(inputId) {
+            const passwordInput = document.getElementById(inputId);
+            const toggleIcon = passwordInput.nextElementSibling.querySelector('i');
+            
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                toggleIcon.classList.remove('fa-eye-slash');
+                toggleIcon.classList.add('fa-eye');
+            } else {
+                passwordInput.type = "password";
+                toggleIcon.classList.remove('fa-eye');
+                toggleIcon.classList.add('fa-eye-slash');
+            }
+        }
     </script>
-    <script src="login page.js"></script>
-
 </body>
-
 </html>
