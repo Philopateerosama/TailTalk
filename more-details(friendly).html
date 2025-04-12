@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friendly Dogs | TailTalk</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body { background: #DAD2BC; overflow-x: hidden; }
+        main { padding-top: 70px; }
+        .feature-box {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        .dog-card {
+            background: #F8F4E9;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .dog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar (Same as your homepage) -->
+    <header data-bs-theme="dark">
+        <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #e0d9d2; padding-bottom: 10px;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                    <b><span class="TailTalk">TailTalk</span></b>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarButtons">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarButtons">
+                    <div class="ms-auto d-flex gap-3">
+                        <a href="adopt.html" class="nav-link" style="color: #5F5449;">Adopt</a>
+                        <a href="chat.html" class="nav-link" style="color: #5F5449;">Chat</a>
+                        <a href="veterinary.html" class="nav-link" style="color: #5F5449;">Veterinary</a>
+                        <a href="events.html" class="nav-link" style="color: #5F5449;">Events</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <div class="container-fluid px-0">
+            <div class="row g-0">
+                <div class="col-md-12">
+                    <div class="p-5 text-center bg-light" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1586671267731-da2cf3ceeb80?q=80&w=2098&auto=format&fit=crop') ; height: 800px; display: flex; align-items: center; justify-content: center; ">
+                        <h1 class="display-4 text-white" data-aos="fade-down">Our Friendly Companions</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why Our Dogs Are Friendly -->
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h2 class="mb-4">Why Our Dogs Are Exceptionally Friendly</h2>
+                    <p class="lead">We specialize in socializing dogs to become perfect family members through proven techniques.</p>
+                    
+                    <div class="feature-box mt-4" data-aos="zoom-in">
+                        <h4><i class="bi bi-heart"></i> Early Socialization</h4>
+                        <p>Puppies are introduced to 50+ people and 20+ animals in their first 12 weeks.</p>
+                    </div>
+                    
+                    <div class="feature-box" data-aos="zoom-in" data-aos-delay="100">
+                        <h4><i class="bi bi-award"></i> Temperament Testing</h4>
+                        <p>Every dog passes our 5-point friendliness assessment before adoption.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1554692918-08fa0fdc9db3?q=80&w=2070&auto=format&fit=crop" class="img-fluid rounded shadow" alt="Friendly dog with family">
+                </div>
+            </div>
+        </div>
+
+        <!-- Meet Our Friendliest Dogs -->
+        <div class="container-fluid py-5" style="background-color: #F8F4E9;">
+            <div class="container">
+                <h2 class="text-center mb-5" data-aos="fade-up">Meet Our Friendliest Stars</h2>
+                
+                <div class="row">
+                    <!-- Dog 1 -->
+                    <div class="col-md-4 mb-4" data-aos="flip-up">
+                        <div class="dog-card p-3 h-100">
+                            <img src="https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?q=80&w=1935&auto=format&fit=crop" class="img-fluid rounded mb-3" alt="Golden Retriever">
+                            <h4>Buddy</h4>
+                            <p>3 y/o Golden Retriever | Loves kids and cats</p>
+                            <ul>
+                                <li>Certified therapy dog</li>
+                                <li>Perfect for first-time owners</li>
+                            </ul>
+                            <a href="adopt.html?id=buddy" class="btn btn-sm" style="background-color: #9B8269; color: white;">Adopt Buddy</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Dog 2 -->
+                    <div class="col-md-4 mb-4" data-aos="flip-up" data-aos-delay="100">
+                        <div class="dog-card p-3 h-100">
+                            <img src="https://images.unsplash.com/photo-1534361960057-19889db9621e?q=80&w=2070&auto=format&fit=crop" class="img-fluid rounded mb-3" alt="Beagle">
+                            <h4>Luna</h4>
+                            <p>2 y/o Beagle | Gets along with everyone</p>
+                            <ul>
+                                <li>Great with other dogs</li>
+                                <li>Loves cuddles</li>
+                            </ul>
+                            <a href="adopt.html?id=luna" class="btn btn-sm" style="background-color: #9B8269; color: white;">Adopt Luna</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Dog 3 -->
+                    <div class="col-md-4 mb-4" data-aos="flip-up" data-aos-delay="200">
+                        <div class="dog-card p-3 h-100">
+                            <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=2035&auto=format&fit=crop" class="img-fluid rounded mb-3" alt="Labrador">
+                            <h4>Max</h4>
+                            <p>4 y/o Labrador | Gentle giant</p>
+                            <ul>
+                                <li>Perfect for active families</li>
+                                <li>Loves swimming</li>
+                            </ul>
+                            <a href="adopt.html?id=max" class="btn btn-sm" style="background-color: #9B8269; color: white;">Adopt Max</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonials -->
+        <div class="container py-5">
+            <h2 class="text-center mb-5" data-aos="fade-up">Happy Families Say</h2>
+            
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="p-4 text-center">
+                        <img src="https://randomuser.me/api/portraits/women/43.jpg" class="rounded-circle mb-3" width="100" alt="User">
+                        <p>"Buddy adapted to our family instantly. He's so gentle with our toddler!"</p>
+                        <h5>- Sarah K.</h5>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="p-4 text-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle mb-3" width="100" alt="User">
+                        <p>"Luna made friends with our grumpy cat on day one. Amazing!"</p>
+                        <h5>- Michael T.</h5>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="p-4 text-center">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" class="rounded-circle mb-3" width="100" alt="User">
+                        <p>"Max is the friendliest dog at the park. Everyone knows him!"</p>
+                        <h5>- Jessica L.</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (Same as your homepage) -->
+    <footer class="container py-4">
+        <p class="float-end"><a href="#">Back to top</a></p>
+        <p>© 2024 TailTalk · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: false,
+            offset: 200,
+            easing: 'ease-in-out',
+            mirror: true
+        });
+    </script>
+</body>
+</html>

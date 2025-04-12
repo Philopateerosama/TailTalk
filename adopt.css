@@ -1,0 +1,39 @@
+body {
+    background-color: #FCF3EA;
+}
+
+.heading-adopt {
+    font-size: 77px; 
+    font-family: 'Alfa Slab One', sans-serif !important;
+    padding-bottom: 26px;
+
+}
+.btn-add{
+    background-color: #9b8269; 
+    color:#DAD2BC;
+    transition: all 0.5s ease;
+}
+.btn-add:hover{
+    background-color: #FCF3EA !important;
+    border: 2px solid #9b8269 !important;
+    color: #9b8269 !important;
+    transition: all 0.5s ease;
+    transform: scale(1.05);
+}
+.btn-serch{
+    background-color: #FCF3EA;
+
+    border: #9b8269 2px solid;
+    color: #9b8269;
+    transition: all 0.5s ease;
+}   
+.btn-serch:hover{
+    background-color: #9b8269 !important;
+    border: 2px solid #FCF3EA !important;
+    color: #FCF3EA !important;
+    transition: all 0.5s ease;
+    transform: scale(1.05);
+}
+.all-page{
+    margin-top: 10%;
+}

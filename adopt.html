@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>adopting</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
+    <link rel="stylesheet" href="adopt.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+</head>
+<body>
+  <div class="container col-xxl-8 all-page">
+    <div class="row align-items-center g-5 py-5">
+            <div class="col-lg-6">
+        <h1  data-aos="fade-right" data-aos-duration="1400" data-aos-delay="200"  class="display-5 fw-bold text-body-emphasis lh-1 mb-3 heading-adopt">Find Your Perfect Friend</h1>
+  
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                 <button type="button" class="btn  btn-lg px-4 me-md-2 btn-add" data-aos="zoom-in-right" data-aos-duration="1400" data-aos-delay="300">Add Your Pet</button>
+          <button data-aos="zoom-in-left" data-aos-duration="1400" data-aos-delay="300" type="button" class="btn btn-outline btn-lg px-4 btn-serch">Search For Pet</button>
+        </div>
+      </div>
+        <div class="col-lg-6 position-relative">
+        <img data-aos="zoom-in" data-aos-duration="1400" data-aos-delay="200" src="img/adopt-1.jpg" class="img-fluid w-100 " alt="Big Image" style="box-shadow: 0 0 10px rgba(0,0,0,0.2); border-radius: 9%;">
+        <img data-aos="zoom-in-right" data-aos-duration="1400" data-aos-delay="300" src="img/adopt-2.jpg" class="position-absolute "
+             style="width: 150px; bottom: 0; left: 0; transform: translate(-20%, 20%); box-shadow: 0 0 10px rgba(0,0,0,0.2); border-radius: 10%;" 
+             alt="Small Image">
+      </div>
+  
+    </div>
+  </div>
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+          once: false, // الأنيميشن يحدث عند التمرير للعنصر أكثر من مرة
+          offset: 200, // المسافة التي تظهر فيها الأنيميشن بعد النزول
+          easing: 'ease-in-out', // تحسين تفاعل الأنيميشن مع التمرير
+          mirror: true, // يعيد الأنيميشن عند الرجوع
+      });
+
+      // تحديث AOS يدويًا عند التمرير
+      window.addEventListener('scroll', function() {
+          AOS.refresh();
+      });
+  });
+</script>
+</body>
+</html>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WhatsApp-like Chat</title>
@@ -18,10 +19,31 @@
             <li data-contact="Diana">Diana</li>
             <li data-contact="Eve">Eve</li>
         </ul>
+=======
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WhatsApp-like Chat</title>
+  <link rel="stylesheet" href="chat.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar for contacts -->
+    <div class="sidebar sideLeft">
+      <h2>Contacts</h2>
+      <ul id="contactList">
+        <li data-contact="Alice" class="active">Alice</li>
+        <li data-contact="Bob">Bob</li>
+        <li data-contact="Charlie">Charlie</li>
+        <li data-contact="Diana">Diana</li>
+        <li data-contact="Eve">Eve</li>
+      </ul>
+>>>>>>> ad5d6e6c9ba1550bdc68e66422599df4570cd21d
     </div>
 
     <!-- Chat window -->
     <div class="chat-window">
+<<<<<<< HEAD
         <div class="chat-header">
             <h2 id="chatContactName">Alice</h2>
         </div>
@@ -36,5 +58,23 @@
 </div>
 
 <script src="chat.js"></script>
+=======
+      <div class="chat-header">
+        <h2 id="chatContactName">Alice</h2>
+      </div>
+      <div class="water-blur-bg" id="chatMessages">
+        <!-- Chat messages will appear here -->
+      </div>
+      <div class="chat-input">
+        <input type="text" id="messageInput" placeholder="Type a message..." />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+  <script src="chat.js"></script>
+>>>>>>> ad5d6e6c9ba1550bdc68e66422599df4570cd21d
 </body>
 </html>

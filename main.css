@@ -17,7 +17,13 @@
     border: 2px solid #9b8269 !important;
     color: #9b8269 !important;
 }
+<<<<<<< HEAD
 .fade-out {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
 }
+=======
+body{
+    transition:all .50s ease;
+}
+>>>>>>> ad5d6e6c9ba1550bdc68e66422599df4570cd21d

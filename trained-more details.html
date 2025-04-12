@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professionally Trained Dogs | TailTalk</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body { background: #DAD2BC; overflow-x: hidden; }
+        main { padding-top: 70px; }
+        .training-badge {
+            background: #9B8269;
+            color: white;
+            border-radius: 20px;
+            padding: 8px 15px;
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        .method-card {
+            background: #F8F4E9;
+            border-radius: 10px;
+            transition: all 0.3s;
+            height: 100%;
+        }
+        .method-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .trainer-img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border: 3px solid #9B8269;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar (Same as homepage) -->
+    <header data-bs-theme="dark">
+        <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #e0d9d2; padding-bottom: 10px;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                    <b><span class="TailTalk">TailTalk</span></b>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarButtons">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarButtons">
+                    <div class="ms-auto d-flex gap-3">
+                        <a href="adopt.html" class="nav-link" style="color: #5F5449;">Adopt</a>
+                        <a href="chat.html" class="nav-link" style="color: #5F5449;">Chat</a>
+                        <a href="veterinary.html" class="nav-link" style="color: #5F5449;">Veterinary</a>
+                        <a href="events.html" class="nav-link" style="color: #5F5449;">Events</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <div class="container-fluid px-0">
+            <div class="row g-0">
+                <div class="col-md-12">
+                    <div class="p-5 text-center bg-light" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?q=80&w=2069&auto=format&fit=crop') center/cover; height: 400px; display: flex; align-items: center; justify-content: center;">
+                        <h1 class="display-4 text-white" data-aos="fade-down">Expertly Trained Companions</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Training Standards -->
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h2 class="mb-4">Our Training Standards</h2>
+                    <p class="lead">Every dog completes a minimum 120-hour training program before adoption.</p>
+                    
+                    <div class="mt-4">
+                        <span class="training-badge" data-aos="zoom-in">Basic Obedience</span>
+                        <span class="training-badge" data-aos="zoom-in" data-aos-delay="100">Leash Manners</span>
+                        <span class="training-badge" data-aos="zoom-in" data-aos-delay="200">House Training</span>
+                        <span class="training-badge" data-aos="zoom-in" data-aos-delay="300">Socialization</span>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="ratio ratio-16x9">
+                        <iframe class="rounded shadow" src="https://www.youtube.com/embed/3dcli9i_pvA?autoplay=0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Training Methods -->
+        <div class="container-fluid py-5" style="background-color: #F8F4E9;">
+            <div class="container">
+                <h2 class="text-center mb-5" data-aos="fade-up">Our Positive Training Methods</h2>
+                
+                <div class="row g-4">
+                    <div class="col-md-4" data-aos="flip-up">
+                        <div class="method-card p-4 h-100">
+                            <div class="text-center mb-3">
+                                <img src="https://img.icons8.com/color/96/000000/dog-bone.png" width="60" alt="Treat">                            </div>
+                            <h4 class="text-center">Reward-Based</h4>
+                            <p>We use 100% positive reinforcement with treats, praise, and play to encourage good behavior.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4" data-aos="flip-up" data-aos-delay="100">
+                        <div class="method-card p-4 h-100">
+                            <div class="text-center mb-3">
+                                <img src="https://img.icons8.com/color/96/000000/dog-paw-print.png" width="60" alt="Paw">
+                            </div>
+                            <h4 class="text-center">Science-Backed</h4>
+                            <p>Techniques based on animal behavior research from leading veterinary schools.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4" data-aos="flip-up" data-aos-delay="200">
+                        <div class="method-card p-4 h-100">
+                            <div class="text-center mb-3">
+                                <img src="https://img.icons8.com/color/96/000000/family.png" width="60" alt="Family">
+                            </div>
+                            <h4 class="text-center">Family-Involved</h4>
+                            <p>We train owners too! Includes 3 free post-adoption training sessions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Meet the Trainers -->
+        <div class="container py-5">
+            <h2 class="text-center mb-5" data-aos="fade-up">Meet Our Certified Trainers</h2>
+            
+            <div class="row text-center">
+                <div class="col-md-4" data-aos="fade-up">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" class="trainer-img rounded-circle mb-3" alt="Trainer">
+                    <h4>Sarah Johnson</h4>
+                    <p class="text-muted">CPDT-KA Certified</p>
+                    <p>12 years experience specializing in rescue dogs</p>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" class="trainer-img rounded-circle mb-3" alt="Trainer">
+                    <h4>Michael Chen</h4>
+                    <p class="text-muted">AKC Evaluator</p>
+                    <p>Former military K9 trainer</p>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" class="trainer-img rounded-circle mb-3" alt="Trainer">
+                    <h4>Emma Rodriguez</h4>
+                    <p class="text-muted">Veterinary Behaviorist</p>
+                    <p>Focuses on anxiety reduction techniques</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success Stories -->
+
+    <!-- Footer -->
+    <footer class="container py-4">
+        <p class="float-end"><a href="#">Back to top</a></p>
+        <p>© 2024 TailTalk · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: false,
+            offset: 200,
+            easing: 'ease-in-out',
+            mirror: true
+        });
+    </script>
+</body>
+</html>
