@@ -68,6 +68,8 @@ document.querySelectorAll("#contactList li").forEach((li) => {
 
 // Load the initial chat (Alice)
 loadChat(currentContact);
+<<<<<<< HEAD
+=======
 function sendMessage() {
     const input = document.getElementById("messageInput");
     const message = input.value.trim();
@@ -85,3 +87,4 @@ function sendMessage() {
     alert("هنا هتضيف الفورم اللي بيطلب الاسم ورقم التليفون 🚀");
   }
   
+>>>>>>> ad5d6e6c9ba1550bdc68e66422599df4570cd21d

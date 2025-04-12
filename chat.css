@@ -5,20 +5,34 @@ body {
     padding: 0;
     height: 100vh;
     display: flex;
+<<<<<<< HEAD
+    background-image:url("backGChat.jpg") ;
+=======
+>>>>>>> ad5d6e6c9ba1550bdc68e66422599df4570cd21d
 }
 
 .container {
     display: flex;
     width: 100%;
     height: 100vh;
+<<<<<<< HEAD
+    background-color: #DDD4CC;
+=======
     
+>>>>>>> ad5d6e6c9ba1550bdc68e66422599df4570cd21d
 }
 
 /* Sidebar styles */
 .sidebar {
+<<<<<<< HEAD
+    width: 30%;
+    max-width: 300px; /* Limit sidebar width */
+    background-color: #9B8269;
+=======
     background-image: url("/TailTalk/img/chat-back.jpg");
     width: 30%;
     max-width: 300px; /* Limit sidebar width */
+>>>>>>> ad5d6e6c9ba1550bdc68e66422599df4570cd21d
     color: #DDD4CC;
     padding: 20px;
     overflow-y: auto; /* Allow scrolling if contacts overflow */
@@ -42,11 +56,19 @@ body {
 }
 
 .sidebar ul li:hover {
+<<<<<<< HEAD
+    background-color: #9B8269;
+=======
+>>>>>>> ad5d6e6c9ba1550bdc68e66422599df4570cd21d
     border: 1px solid #DDD4CC;
 
 }
 
 .sidebar ul li.active {
+<<<<<<< HEAD
+    background-color: #9B8269;
+=======
+>>>>>>> ad5d6e6c9ba1550bdc68e66422599df4570cd21d
     border: 1px solid #DDD4CC;
 }
 
@@ -55,6 +77,17 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
+    background-image:url("backGChat.jpg") ;
+}
+
+.chat-header {
+    padding: 20px;
+    background-color: #DDD4CC;
+    color: #9B8269;
+}
+
+=======
     background-image: url("/TailTalk/img/chat-back.jpg");
     background-size: cover;
     backdrop-filter: blur(500px)!important; /* Increase blur effect by 10 times */
@@ -75,10 +108,15 @@ body {
 
 
 
+>>>>>>> ad5d6e6c9ba1550bdc68e66422599df4570cd21d
 .chat-messages {
     flex: 1;
     padding: 20px;
     overflow-y: auto;
+<<<<<<< HEAD
+   background-color: #DDD4CC ;
+=======
+>>>>>>> ad5d6e6c9ba1550bdc68e66422599df4570cd21d
 }
 
 .chat-input {
@@ -131,6 +169,10 @@ body {
 .sideLeft{
     padding-left:10px ;
     border: 13px solid #DDD4CC;
+<<<<<<< HEAD
+    border-radius: 5%;
+}
+=======
     border-radius: 5%;
 }
 .water-blur-bg {
@@ -161,3 +203,4 @@ body {
   }
  
   
+>>>>>>> ad5d6e6c9ba1550bdc68e66422599df4570cd21d
