@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp-like Chat</title>
+    <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+<div class="container">
+    <!-- Sidebar for contacts -->
+    <div class="sidebar sideLeft">
+        <h2>Contacts</h2>
+        <ul id="contactList">
+            <li data-contact="Alice" class="active">Alice</li>
+            <li data-contact="Bob">Bob</li>
+            <li data-contact="Charlie">Charlie</li>
+            <li data-contact="Diana">Diana</li>
+            <li data-contact="Eve">Eve</li>
+        </ul>
+    </div>
+
+    <!-- Chat window -->
+    <div class="chat-window">
+        <div class="chat-header">
+            <h2 id="chatContactName">Alice</h2>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <!-- Chat messages will appear here -->
+        </div>
+        <div class="chat-input">
+            <input type="text" id="messageInput" placeholder="Type a message..." />
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+</div>
+
+<script src="chat.js"></script>
+</body>
+</html>

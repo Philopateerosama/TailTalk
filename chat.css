@@ -1,0 +1,128 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    background-image:url("backGChat.jpg") ;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: #DDD4CC;
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 30%;
+    max-width: 300px; /* Limit sidebar width */
+    background-color: #9B8269;
+    color: #DDD4CC;
+    padding: 20px;
+    overflow-y: auto; /* Allow scrolling if contacts overflow */
+}
+
+.sidebar h2 {
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s;
+}
+
+.sidebar ul li:hover {
+    background-color: #9B8269;
+    border: 1px solid #DDD4CC;
+
+}
+
+.sidebar ul li.active {
+    background-color: #9B8269;
+    border: 1px solid #DDD4CC;
+}
+
+/* Chat window styles */
+.chat-window {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-image:url("backGChat.jpg") ;
+}
+
+.chat-header {
+    padding: 20px;
+    background-color: #DDD4CC;
+    color: #9B8269;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+   background-color: #DDD4CC ;
+}
+
+.chat-input {
+    display: flex;
+    padding: 10px;
+    background-color: #DDD4CC;
+    border-top: 1px solid #ddd;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #9B8269;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.chat-input button {
+    padding: 10px 20px;
+    background-color: #9B8269;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.chat-input button:hover {
+    background-color:#5F5449;
+}
+
+/* Message styling */
+.message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    max-width: 70%;
+}
+
+.message.sent {
+    background-color: #AFA193;
+    margin-left: auto;
+    text-align: right;
+}
+
+.message.received {
+    background-color: #FCF3EA;
+    margin-right: auto;
+    text-align: left;
+}
+.sideLeft{
+    padding-left:10px ;
+    border: 13px solid #DDD4CC;
+    border-radius: 5%;
+}
