@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TailTalk - Pet Care Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-light: #FCF3EA;
+            --primary-dark: #5F5449;
+            --accent: #9B8269;
+            --secondary-light: #E0D9D2;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--primary-light);
+            color: var(--primary-dark);
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--primary-light);
+            padding: 2rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: linear-gradient(to right, var(--accent), var(--primary-dark));
+            opacity: 0.7;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s ease;
+        }
+
+        .logo span {
+            color: var(--primary-dark);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+            animation: fadeIn 1.5s ease;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--primary-dark);
+            opacity: 0.8;
+            animation: fadeIn 2s ease;
+        }
+
+        .search-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            animation: slideUp 1s ease;
+        }
+
+        .search-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .search-input {
+            flex: 1;
+            min-width: 200px;
+            padding: 12px 15px;
+            border: 1px solid var(--secondary-light);
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .search-btn {
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .search-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 3rem 1rem;
+            background-color: var(--secondary-light);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .service-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            background-color: var(--accent);
+            color: white;
+            font-size: 2rem;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .service-content {
+            padding: 1.5rem;
+        }
+
+        .service-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .service-description {
+            margin-bottom: 1.5rem;
+            color: var(--primary-dark);
+            opacity: 0.8;
+        }
+
+        .service-features {
+            list-style-type: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .service-features li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .service-btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .service-btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* How It Works Section */
+        .how-it-works {
+            padding: 3rem 1rem;
+            background-color: var(--primary-light);
+        }
+
+        .steps-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .step-card {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        .step-card.animate {
+            opacity: 1;
+        }
+
+        .step-card:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+        .step-card:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+        .step-card:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+        .step-card:nth-child(4) {
+            animation-delay: 0.8s;
+        }
+
+        .step-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent);
+            color: white;
+            border-radius: 50%;
+            line-height: 50px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .step-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .step-description {
+            color: var(--primary-dark);
+            opacity: 0.8;
+        }
+
+        /* Caregivers Section */
+        .caregivers-section {
+            padding: 3rem 1rem;
+            background-color: var(--secondary-light);
+        }
+
+        .caregivers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .caregiver-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        .caregiver-card.animate {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .caregiver-card:hover {
+            transform: scale(1.05);
+        }
+
+        .caregiver-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .caregiver-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+        }
+
+        .caregiver-rating {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            z-index: 2;
+            color: white;
+        }
+
+        .caregiver-rating .stars {
+            color: gold;
+        }
+
+        .caregiver-verified {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--accent);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .caregiver-info {
+            padding: 1.5rem;
+        }
+
+        .caregiver-name {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-dark);
+        }
+
+        .caregiver-location {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+            opacity: 0.8;
+        }
+
+        .caregiver-location i {
+            margin-right: 5px;
+            color: var(--accent);
+        }
+
+        .caregiver-services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-tag {
+            background-color: var(--secondary-light);
+            color: var(--primary-dark);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .caregiver-btn {
+            display: block;
+            text-align: center;
+            background-color: var(--accent);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .caregiver-btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Trust & Safety Section */
+        .trust-section {
+            padding: 3rem 1rem;
+            background-color: var(--primary-light);
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .trust-item {
+            text-align: center;
+            padding: 1.5rem;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .trust-item.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .trust-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .trust-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        .trust-description {
+            color: var(--primary-dark);
+            opacity: 0.8;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 4rem 1rem;
+            background-color: var(--primary-dark);
+            color: var(--secondary-light);
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn-primary {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .cta-btn-primary:hover {
+            background-color: var(--white);
+            color: var(--primary-dark);
+        }
+
+        .cta-btn-secondary {
+            background-color: transparent;
+            color: var(--secondary-light);
+            border: 2px solid var(--secondary-light);
+        }
+
+        .cta-btn-secondary:hover {
+            background-color: var(--secondary-light);
+            color: var(--primary-dark);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--secondary-light);
+            padding: 3rem 1rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo span {
+            color: var(--secondary-light);
+        }
+
+        .footer-about {
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icon {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            color: var(--secondary-light);
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background-color: var(--accent);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .footer-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-light);
+        }
+
+        .footer-links {
+            list-style-type: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: var(--secondary-light);
+            opacity: 0.8;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .search-form {
+                flex-direction: column;
+            }
+            
+            .steps-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .step-card {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Tail<span>Talk</span></div>
+        <h1>Pet Care Services</h1>
+        <p class="subtitle">Connecting pet owners with trusted caregivers in your neighborhood</p>
+        
+        <div class="search-container">
+            <form class="search-form">
+                <input type="text" class="search-input" placeholder="What service does your pet need?">
+                <input type="text" class="search-input" placeholder="Location">
+                <input type="date" class="search-input" placeholder="Date">
+                <button type="submit" class="search-btn">Find Care</button>
+            </form>
+        </div>
+    </header>
+
+    <section class="services-section">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-dog"></i>
+                </div>
+                <div class="service-content">
+                    <h3 class="service-title">Dog Walking</h3>
+                    <p class="service-description">Professional walks to keep your pup happy and healthy</p>
+                    <ul class="service-features">
+                        <li>30-min or 60-min walks</li>
+                        <li>GPS-tracked routes</li>
+                        <li>Photo updates</li>
+                        <li>Group walk options</li>
+                    </ul>
+                    <a href="#" class="service-btn">Book Now</a>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-bath"></i>
+                </div>
+                <div class="service-content">
+                    <h3 class="service-title">Grooming Services</h3>
+                    <p class="service-description">Keep your pet looking and feeling their best</p>
+                    <ul class="service-features">
+                        <li>Bath & brush</li>
+                        <li>Full grooming packages</li>
+                        <li>Nail trimming</li>
+                        <li>Mobile grooming van</li>
+                    </ul>
+                    <a href="#" class="service-btn">Book Now</a>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-home"></i>
+                </div>
+                <div class="service-content">
+                    <h3 class="service-title">Pet Sitting</h3>
+                    <p class="service-description">Loving care while you're away</p>
+                    <ul class="service-features">
+                        <li>Drop-in visits</li>
+                        <li>Overnight stays</li>
+                        <li>Live video check-ins</li>
+                        <li>Medication administration</li>
+                    </ul>
+                    <a href="#" class="service-btn">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <h2 class="section-title">How TailTalk Works</h2>
+        <div class="steps-container">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3 class="step-title">Post a Request</h3>
+                <p class="step-description">Tell us what your pet needs and when you need care</p>
+            </div>
+            
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3 class="step-title">Get Matched</h3>
+                <p class="step-description">We'll connect you with trusted caregivers in your area</p>
+            </div>
+            
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3 class="step-title">Schedule & Pay</h3>
+                <p class="step-description">Book and pay securely through our platform</p>
+            </div>
+            
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <h3 class="step-title">Enjoy Peace of Mind</h3>
+                <p class="step-description">Receive updates and know your pet is in good hands</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="caregivers-section">
+        <h2 class="section-title">Featured Caregivers</h2>
+        <div class="caregivers-grid">
+            <div class="caregiver-card">
+                <div class="caregiver-image" style="background-image: url('https://images.unsplash.com/photo-1583864697784-a0efc8379f70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80');">
+                    <div class="caregiver-rating">
+                        <span class="stars">★★★★★</span> (24)
+                    </div>
+                    <div class="caregiver-verified">
+                        <i class="fas fa-check"></i> Verified
+                    </div>
+                </div>
+                <div class="caregiver-info">
+                    <h3 class="caregiver-name">Sarah Johnson</h3>
+                    <div class="caregiver-location">
+                        <i class="fas fa-map-marker-alt"></i> 2 miles away
+                    </div>
+                    <div class="caregiver-services">
+                        <span class="service-tag">Dog Walking</span>
+                        <span class="service-tag">Pet Sitting</span>
+                        <span class="service-tag">Puppy Care</span>
+                    </div>
+                    <a href="#" class="caregiver-btn">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="caregiver-card">
+                <div class="caregiver-image" style="background-image: url('https://images.unsplash.com/photo-1591769225440-811ad7d6eab2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80');">
+                    <div class="caregiver-rating">
+                        <span class="stars">★★★★☆</span> (18)
+                    </div>
+                    <div class="caregiver-verified">
+                        <i class="fas fa-check"></i> Verified
+                    </div>
+                </div>
+                <div class="caregiver-info">
+                    <h3 class="caregiver-name">Michael Chen</h3>
+                    <div class="caregiver-location">
+                        <i class="fas fa-map-marker-alt"></i> 1.5 miles away
+                    </div>
+                    <div class="caregiver-services">
+                        <span class="service-tag">Grooming</span>
+                        <span class="service-tag">Nail Trimming</span>
+                        <span class="service-tag">Cat Care</span>
+                    </div>
+                    <a href="#" class="caregiver-btn">View Profile</a>
+                </div>
+            </div>
+            
+            <div class="caregiver-card">
+                <div class="caregiver-image" style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80');">
+                    <div class="caregiver-rating">
+                        <span class="stars">★★★★★</span> (32)
+                    </div>
+                    <div class="caregiver-verified">
+                        <i class="fas fa-check"></i> Verified
+                    </div>
+                </div>
+                <div class="caregiver-info">
+                    <h3 class="caregiver-name">Emma Rodriguez</h3>
+                    <div class="caregiver-location">
+                        <i class="fas fa-map-marker-alt"></i> 3 miles away
+                    </div>
+                    <div class="caregiver-services">
+                        <span class="service-tag">Overnight Care</span>
+                        <span class="service-tag">Senior Pets</span>
+                        <span class="service-tag">Special Needs</span>
+                    </div>
+                    <a href="#" class="caregiver-btn">View Profile</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="trust-section">
+        <h2 class="section-title">Trust & Safety</h2>
+        <div class="trust-grid">
+            <div class="trust-item">
+                <div class="trust-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3 class="trust-title">Background Checks</h3>
+                <p class="trust-description">All caregivers undergo thorough background checks</p>
+            </div>
+            
+            <div class="trust-item">
+                <div class="trust-icon">
+                    <i class="fas fa-first-aid"></i>
+                </div>
+                <h3 class="trust-title">Pet First Aid Certified</h3>
+                <p class="trust-description">Caregivers complete pet first aid training</p>
+            </div>
+            
+            <div class="trust-item">
+                <div class="trust-icon">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <h3 class="trust-title">Secure Payments</h3>
+                <p class="trust-description">Payments are processed securely through our platform</p>
+            </div>
+            
+            <div class="trust-item">
+                <div class="trust-icon">
+                    <i class="fas fa-camera"></i>
+                </div>
+                <h3 class="trust-title">Photo Updates</h3>
+                <p class="trust-description">Receive real-time updates during each service</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2 class="cta-title">Ready to Find the Perfect Care for Your Pet?</h2>
+        <div class="cta-buttons">
+            <a href="#" class="cta-btn cta-btn-primary">Find a Caregiver</a>
+            <a href="#" class="cta-btn cta-btn-secondary">Become a Caregiver</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="footer-logo">Tail<span>Talk</span></div>
+                <p class="footer-about">Connecting pet owners with trusted caregivers for all pet care needs.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3 class="footer-title">Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Dog Walking</a></li>
+                    <li><a href="#">Pet Sitting</a></li>
+                    <li><a href="#">Grooming</a></li>
+                    <li><a href="#">Day Care</a></li>
+                    <li><a href="#">Training</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3 class="footer-title">Company</h3>
+                <ul class="footer-links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3 class="footer-title">Support</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Safety</a></li>
+                    <li><a href="#">Community Guidelines</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 TailTalk. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate service cards
+            const serviceCards = document.querySelectorAll('.service-card');
+            animateElements(serviceCards, 0.2);
+            
+            // Animate how it works steps
+            const stepCards = document.querySelectorAll('.step-card');
+            animateElements(stepCards, 0.2);
+            
+            // Animate caregiver cards
+            const caregiverCards = document.querySelectorAll('.caregiver-card');
+            animateElements(caregiverCards, 0.2);
+            
+            // Animate trust items
+            const trustItems = document.querySelectorAll('.trust-item');
+            animateElements(trustItems, 0.2);
+            
+            // Function to animate elements when they come into view
+            function animateElements(elements, delayIncrement) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry, index) => {
+                        if (entry.isIntersecting) {
+                            setTimeout(() => {
+                                entry.target.classList.add('animate');
+                            }, index * delayIncrement * 1000);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.1
+                });
+                
+                elements.forEach(element => {
+                    observer.observe(element);
+                });
+            }
+            
+            // Add hover effect to service cards
+            serviceCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Add click effect to buttons
+            const buttons = document.querySelectorAll('.service-btn, .caregiver-btn, .cta-btn');
+            buttons.forEach(button => {
+                button.addEventListener('mousedown', function() {
+                    this.style.transform = 'scale(0.95)';
+                });
+                button.addEventListener('mouseup', function() {
+                    this.style.transform = 'scale(1)';
+                });
+                button.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+            
+            // Search form submission
+            const searchForm = document.querySelector('.search-form');
+            searchForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // In a real implementation, this would process the search
+                alert('Search functionality would be implemented here!');
+            });
+        });
+    </script>
+</body>
+</html>
