@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetMatch - Find Mates for Your Pets</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="home page.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="purpose.css">
+
+</head>
+<body>
+    <header data-bs-theme="dark">
+        <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #e0d9d2; padding-bottom: 10px;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                    <b><span class="TailTalk">TailTalk</span></b>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarButtons">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarButtons">
+                    <div class="ms-auto d-flex gap-3">
+                        <a href="adopt.html" class="nav-link" style="color: #5F5449; padding-right: 10px;">Adopt</a>
+                        <a href="chat.html" class="nav-link" style="color: #5F5449; padding-right: 10px;">Chat</a>
+                        <a href="veterinary.html" class="nav-link" style="color: #5F5449; padding-right: 10px;">Veterinary Services</a>
+                        <a href="events.html" class="nav-link" style="color: #5F5449; padding-right: 10px;">Events</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" data-aos="fade">
+        <h1>Find the Perfect Mate for Your Pet</h1>
+        <p>Help your pet find the right life companion through our specialized community</p>
+    </section>
+
+    <!-- Search Bar -->
+    <div class="search-bar" data-aos="fade-up" data-aos-delay="200">
+        <form class="search-form">
+            <div class="form-group">
+                <label for="pet-type">Pet Type</label>
+                <select id="pet-type">
+                    <option value="">Select Type</option>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="bird">Bird</option>
+                    <option value="rabbit">Rabbit</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="breed">Breed</label>
+                <input type="text" id="breed" placeholder="Enter breed">
+            </div>
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" placeholder="Enter city">
+            </div>
+            <button type="submit" class="search-btn">Search <i class="fas fa-search"></i></button>
+        </form>
+    </div>
+
+    <!-- Pets Section -->
+    <section class="container">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Available Pets</h2>
+        </div>
+        
+        <div class="pets-grid">
+            <!-- Pet Card 1 -->
+            <div class="pet-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="pet-img">
+                    <img src="https://images.unsplash.com/photo-1586671267731-da2cf3ceeb80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Golden Retriever">
+                </div>
+                <div class="pet-info">
+                    <h3>Max</h3>
+                    <div class="pet-meta">
+                        <span><i class="fas fa-dog"></i> Male</span>
+                        <span><i class="fas fa-birthday-cake"></i> 2 years</span>
+                        <span><i class="fas fa-map-marker-alt"></i> New York</span>
+                    </div>
+                    <p class="pet-description">Friendly Golden Retriever looking for a female mate of the same breed. All vaccinations up to date.</p>
+                    <div class="pet-actions">
+                        <a href="#" class="btn btn-primary">Contact us</a>
+                        <a href="./pet1-details.html" class="btn btn-outline">Details</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pet Card 2 -->
+            <div class="pet-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="pet-img">
+                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1387&q=80" alt="Persian Cat">
+                </div>
+                <div class="pet-info">
+                    <h3>Luna</h3>
+                    <div class="pet-meta">
+                        <span><i class="fas fa-cat"></i> Female</span>
+                        <span><i class="fas fa-birthday-cake"></i> 1 year</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Los Angeles</span>
+                    </div>
+                    <p class="pet-description">Beautiful Persian cat seeking a male mate of the same breed. Comes from a healthy lineage.</p>
+                    <div class="pet-actions">
+                        <a href="./contaact-us.html" class="btn btn-primary">Contact us</a>
+                        <a href="./pet-details2.html" class="btn btn-outline">Details</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pet Card 3 -->
+            <div class="pet-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="pet-img">
+                    <img src="img/purpose-1.jpg" alt="Husky">
+                </div>
+                <div class="pet-info">
+                    <h3>Ziko</h3>
+                    <div class="pet-meta">
+                        <span><i class="fas fa-dog"></i> Male</span>
+                        <span><i class="fas fa-birthday-cake"></i> 3 years</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Chicago</span>
+                    </div>
+                    <p class="pet-description">Strong and healthy Husky with complete vaccination records, looking for a female mate.</p>
+                    <div class="pet-actions">
+                        <a href="./contaact-us.html" class="btn btn-primary">Contact us</a>
+                        <a href="./pet-details3.html" class="btn btn-outline">Details</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pet Card 4 -->
+            <div class="pet-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="pet-img">
+                    <img src="./img/purpose-2.jpg" alt="Parrot">
+                </div>
+                <div class="pet-info">
+                    <h3>Kiko</h3>
+                    <div class="pet-meta">
+                        <span><i class="fas fa-dove"></i> Male</span>
+                        <span><i class="fas fa-birthday-cake"></i> 4 years</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Miami</span>
+                    </div>
+                    <p class="pet-description">African Grey parrot that can speak several words, looking for a female mate.</p>
+                    <div class="pet-actions">
+                        <a href="./contaact-us.html" class="btn btn-primary">Contact us</a>
+                        <a href="./pet-details4.html" class="btn btn-outline">Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="success-stories">
+        <div class="stories-container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Success Stories</h2>
+            </div>
+            
+            <!-- Story 1 -->
+            <div class="story-card" data-aos="fade-up">
+                <div class="story-header">
+                    <div class="story-couple">
+                        <div class="story-pet">
+                            <img src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1376&q=80" alt="Dog">
+                        </div>
+                        <div class="story-pet">
+                            <img src="https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1376&q=80" alt="Dog">
+                        </div>
+                    </div>
+                    <div class="story-title">
+                        <h3>Rex & Lola</h3>
+                        <div class="story-date">Matched on March 15, 2023</div>
+                    </div>
+                </div>
+                <div class="story-content">
+                    <p>Rex and Lola met through our platform and successfully mated. Two months after mating, Lola gave birth to 6 healthy and beautiful puppies. We're very happy with the service that helped make this little family happy.</p>
+                </div>
+            </div>
+            
+            <!-- Story 2 -->
+            <div class="story-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="story-header">
+                    <div class="story-couple">
+                        <div class="story-pet">
+                            <img src="https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1387&q=80" alt="Cat">
+                        </div>
+                        <div class="story-pet">
+                            <img src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1387&q=80" alt="Cat">
+                        </div>
+                    </div>
+                    <div class="story-title">
+                        <h3>Simba & Nala</h3>
+                        <div class="story-date">Matched on January 2, 2023</div>
+                    </div>
+                </div>
+                <div class="story-content">
+                    <p>Simba and Nala met through our site and mated after a week of getting to know each other. Nala gave birth to 4 beautiful kittens. The owners are happy with the result and thank the platform for helping them find the right mate for their pets.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Pet Section -->
+    <section class="add-pet-section" data-aos="fade">
+        <div class="add-pet-content">
+            <h2>Want to Add Your Pet?</h2>
+            <p>Register your pet in our community and help them find the perfect mate. The registration process is quick and easy.</p>
+            <a href="#" class="btn btn-light">Add Your Pet Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column" data-aos="fade-up" data-aos-delay="100">
+                <h3>About PetMatch</h3>
+                <p>A platform dedicated to helping pet owners find suitable mating partners for their pets.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column" data-aos="fade-up" data-aos-delay="200">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Browse Pets</a></li>
+                    <li><a href="#">Success Stories</a></li>
+                    <li><a href="#">Tips & Guides</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column" data-aos="fade-up" data-aos-delay="300">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> New York, USA</li>
+                    <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+                    <li><i class="fas fa-envelope"></i> info@petmatch.com</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright" data-aos="fade-up" data-aos-delay="400">
+            <p>&copy; 2023 PetMatch. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            once: false,
+            duration: 1400,
+            easing: 'ease-in-out',
+            offset: 200
+        });
+    </script>
+</body>
+</html>
