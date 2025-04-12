@@ -371,22 +371,27 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <nav class="navbar">
-            <a href="index.html" class="logo">
-                <i class="fas fa-paw"></i>
-                <span>PetMatch</span>
+<header data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #e0d9d2; padding-bottom: 10px;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="logo.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                <b><span class="TailTalk">TailTalk</span></b>
             </a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="#">Browse</a>
-                <a href="#">Success Stories</a>
-                <a href="contact.html" class="active">Contact</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarButtons">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarButtons">
+                <div class="ms-auto d-flex gap-3">
+                    <a href="adopt.html" class="nav-link" style="color: #5F5449; padding-right: 10px;">Adopt</a>
+                    <a href="chat.html" class="nav-link" style="color: #5F5449; padding-right: 10px;">Chat</a>
+                    <a href="veterinary.html" class="nav-link" style="color: #5F5449; padding-right: 10px;">Veterinary Services</a>
+                    <a href="events.html" class="nav-link" style="color: #5F5449; padding-right: 10px;">Events</a>
+                </div>
             </div>
-        </nav>
-    </header>
-
+        </div>
+    </nav>
+</header>
     <!-- Contact Content -->
     <div class="contact-container">
         <div class="page-title" data-aos="fade-up">
