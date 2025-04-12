@@ -33,11 +33,7 @@
             <div class="d-grid gap-1 d-md-flex justify-content-md-start">
                 <a href="login page.html">
                 <button data-aos="fade-up" data-aos-duration="1400" data-aos-delay="400" type="button" class="btn btn-lg px-4 me-md-2
-<<<<<<< HEAD
-                 button-auth" style="background-color: #9b8269; color:#DAD2BC; font-weight: 700;">Click Me!</button>
-=======
                  button-auth" style="background-color: #9b8269; color:#DAD2BC; font-weight: 700; transition: all 0.6s ease;">Click Me!</button>
->>>>>>> ad5d6e6c9ba1550bdc68e66422599df4570cd21d
                 </a>
             </div>
         </div>
@@ -59,29 +55,6 @@
     <script>
         AOS.init();
       </script>
-<<<<<<< HEAD
-    <script>
-        document.querySelector(".button-auth").addEventListener("click", function(event) {
-        event.preventDefault(); // منع التنقل الفوري
-
-        let button = event.target; // الزرار اللي تم الضغط عليه
-        let buttonRect = button.getBoundingClientRect(); // جلب موقع الزرار على الشاشة
-    
-    // تأثير Zoom In للزرار مع تصغير الخلفية
-        gsap.to("body", {
-            scale: 2, // تكبير الشاشة
-            x: -buttonRect.left + window.innerWidth / 2 - buttonRect.width / 2,
-            y: -buttonRect.top + window.innerHeight / 2 - buttonRect.height / 2,
-            duration: 0.9,
-            ease: "power2.inOut",
-            onComplete: () => {
-                window.location.href = "login page.html"; // الانتقال بعد التأثير
-            }
-        });
-    });
-
-    </script>
-=======
       <script>
         document.getElementById("navigate").addEventListener("click", function(event) {
     event.preventDefault(); // يمنع التنقل الفوري
@@ -90,6 +63,5 @@
     }});
 });
       </script>
->>>>>>> ad5d6e6c9ba1550bdc68e66422599df4570cd21d
 </body>
 </html>
