@@ -4,9 +4,7 @@ from datetime import datetime
 import os
 
 app = Flask(__name__, template_folder='.')
-CORS(app)  # Enable CORS for all routes
-
-# Sample database
+CORS(app) 
 pets_db = {
     'dog': {
         'vaccinations': [
@@ -60,22 +58,18 @@ pets_db = {
 
 reminders_db = []
 
-# Serve the main page
 @app.route('/')
 def home():
     return render_template('main.html')
 
-# Handle login page
 @app.route('/login')
 def login():
     return send_from_directory('.', 'login page.html')
 
-# Serve static files (CSS, JS, images)
 @app.route('/<path:filename>')
 def static_files(filename):
     return send_from_directory('.', filename)
 
-# API endpoints
 @app.route('/api/vaccinations', methods=['GET'])
 def get_vaccinations():
     pet_type = request.args.get('pet_type', 'dog')

@@ -10,9 +10,8 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
-        /* Add padding to the top of the main element to account for the fixed navbar */
         main {
-            padding-top: 70px; /* Adjust this value based on the height of your navbar */
+            padding-top: 70px;
         }
         
         .beautiful-header {
@@ -168,7 +167,6 @@
     </div>
 </main>
 
-<!-- FOOTER -->
 <footer class="container">
     <p class="float-end"><a href="#">Back to top</a></p>
     <p>@ JPJ Team Master <a href="#">Privacy</a> · <a href="#">Terms</a></p>
@@ -178,7 +176,6 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 <script>
-    // Initialize AOS when page loads
     document.addEventListener('DOMContentLoaded', function() {
         AOS.init({
             once: false,
@@ -186,8 +183,6 @@
             easing: 'ease-in-out',
             mirror: true,
         });
-
-        // Refresh AOS on scroll
         window.addEventListener('scroll', function() {
             AOS.refresh();
         });

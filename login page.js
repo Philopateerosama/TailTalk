@@ -1,20 +1,16 @@
-// Toggle password visibility for Sign In and monkey eyes
 document.getElementById('signin-toggle-password').addEventListener('change', function () {
     var passwordInput = document.getElementById('signin-password');
     passwordInput.type = this.checked ? 'text' : 'password';
     
-    // Toggle monkey eyes state
     document.getElementById('avatar-checkbox').checked = this.checked;
     toggleMonkeyEyes(this.checked);
 });
 
-// Toggle password visibility for Sign Up
 document.getElementById('signup-toggle-password').addEventListener('change', function () {
     var passwordInput = document.getElementById('signup-password');
     passwordInput.type = this.checked ? 'text' : 'password';
 });
 
-// Toggle monkey avatar animation
 document.getElementById('avatar-checkbox').addEventListener('change', function() {
     toggleMonkeyEyes(this.checked);
 });
@@ -40,7 +36,7 @@ function toggleMonkeyEyes(shouldHide) {
     
     const monkeyMouth = document.querySelector('.avatar::before');
     if (monkeyMouth) {
-        const svgSize = 90; // --sz-svg value
+        const svgSize = 90;
         if (shouldHide) {
             monkeyMouth.style.width = `${svgSize * 0.09}px`;
             monkeyMouth.style.height = '0';

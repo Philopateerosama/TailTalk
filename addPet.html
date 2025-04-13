@@ -134,16 +134,14 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 <script>
-  // تفعيل AOS عند تحميل الصفحة
   document.addEventListener('DOMContentLoaded', function() {
       AOS.init({
-          once: false, // الأنيميشن يحدث عند التمرير للعنصر أكثر من مرة
-          offset: 200, // المسافة التي تظهر فيها الأنيميشن بعد النزول
-          easing: 'ease-in-out', // تحسين تفاعل الأنيميشن مع التمرير
-          mirror: true, // يعيد الأنيميشن عند الرجوع
+          once: false,
+          offset: 200,
+          easing: 'ease-in-out',
+          mirror: true,
       });
 
-      // تحديث AOS يدويًا عند التمرير
       window.addEventListener('scroll', function() {
           AOS.refresh();
       });

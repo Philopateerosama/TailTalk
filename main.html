@@ -53,9 +53,9 @@
       </script>
       <script>
         document.getElementById("navigate").addEventListener("click", function(event) {
-    event.preventDefault(); // يمنع التنقل الفوري
+    event.preventDefault();
     gsap.to("body", { opacity: 0, duration: 0.5, onComplete: () => {
-        window.location.href = "login page.html"; // انتقال بعد التأثير
+        window.location.href = "login page.html";
     }});
 });
       </script>

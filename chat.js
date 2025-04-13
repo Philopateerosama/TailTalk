@@ -1,4 +1,3 @@
-// Sample chat data for each contact
 const chatData = {
     Alice: [
         { sender: "Alice", message: "Hi there!" },
@@ -17,11 +16,9 @@ const chatData = {
 
 let currentContact = "Alice";
 
-// Function to load chat messages for the selected contact
 function loadChat(contact) {
     const chatMessages = document.getElementById("chatMessages");
-    chatMessages.innerHTML = ""; // Clear previous messages
-
+    chatMessages.innerHTML = "";
     chatData[contact].forEach((msg) => {
         const messageElement = document.createElement("div");
         messageElement.classList.add("message");
@@ -30,43 +27,37 @@ function loadChat(contact) {
         chatMessages.appendChild(messageElement);
     });
 
-    // Scroll to the bottom of the chat
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
-// Function to handle contact selection
 function selectContact(contact) {
     currentContact = contact;
     document.getElementById("chatContactName").textContent = contact;
     loadChat(contact);
 
-    // Update active state in the sidebar
     document.querySelectorAll("#contactList li").forEach((li) => {
         li.classList.remove("active");
     });
     document.querySelector(#contactList li[data-contact="${contact}"]).classList.add("active");
 }
 
-// Function to send a message
 function sendMessage() {
     const messageInput = document.getElementById("messageInput");
     const message = messageInput.value.trim();
 
     if (message) {
         chatData[currentContact].push({ sender: "You", message });
-        messageInput.value = ""; // Clear input field
-        loadChat(currentContact); // Reload chat
+        messageInput.value = "";
+        loadChat(currentContact); 
     }
 }
 
-// Add event listeners to contact list items
 document.querySelectorAll("#contactList li").forEach((li) => {
     li.addEventListener("click", () => {
         selectContact(li.getAttribute("data-contact"));
     });
 });
 
-// Load the initial chat (Alice)
 loadChat(currentContact);
 <<<<<<< HEAD
 =======
@@ -87,4 +78,3 @@ function sendMessage() {
     alert("هنا هتضيف الفورم اللي بيطلب الاسم ورقم التليفون 🚀");
   }
   
->>>>>>> ad5d6e6c9ba1550bdc68e66422599df4570cd21d

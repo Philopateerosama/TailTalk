@@ -69,7 +69,6 @@
             <header>
                 <div class="events-container">
 
-                    <!-- Dog Events -->
                     <div data-aos="zoom-in-right" data-aos-duration="1400" class="book">
                         <div class="front">
                             <h3 data-aos="fade-right" data-aos-duration="1400">🐾Paws & Pixels: Pet Photography
@@ -161,7 +160,6 @@
                         </div>
                     </div>
 
-                    <!-- Cat Events -->
                     <div data-aos="flip-left" data-aos-duration="1400" class="book" class="book">
                         <div class="front">
                             <h3 data-aos="fade-right" data-aos-duration="1400">😸Whisker Wellness Retreat</h3>
@@ -246,7 +244,6 @@
                         </div>
                     </div>
 
-                    <!-- All Animals -->
                     <div data-aos="zoom-out-right" data-aos-duration="1400" class="book">
                         <div class="front">
                             <h3 data-aos="fade-right" data-aos-duration="1400">🐶 Bark in the Park</h3>
@@ -487,13 +484,12 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             AOS.init({
-                once: false, // Animation triggers when scrolling to element multiple times
-                offset: 200, // Distance from element before animation triggers
-                easing: 'ease-in-out', // Smooth animation easing
-                mirror: true, // Animations play again when scrolling back up
+                once: false,
+                offset: 200,
+                easing: 'ease-in-out',
+                mirror: true,
             });
 
-            // Refresh AOS on scroll
             window.addEventListener('scroll', function () {
                 AOS.refresh();
             });

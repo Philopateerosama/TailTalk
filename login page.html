@@ -27,7 +27,7 @@
         }
 
         .checkmark::before {
-            content: "\f070"; /* FontAwesome eye-slash icon */
+            content: "\f070";
             font-family: "Font Awesome 6 Free";
             font-weight: 900;
         }
@@ -36,7 +36,6 @@
             content: "\f06e";
         }
 
-        /* Monkey avatar styles */
         .avatar-container {
             position: relative;
             margin-bottom: 20px;
@@ -170,7 +169,6 @@
 
 <body>
 <div class="container" id="container">
-    <!-- Monkey avatar toggle checkbox -->
     <input type="checkbox" id="avatar-checkbox" class="avatar-checkbox" hidden>
     
     <div class="form-container sign-up">
@@ -200,7 +198,6 @@
     
     <div class="form-container sign-in">
         <form>
-            <!-- Monkey avatar container -->
             <div class="avatar-container">
                 <label for="avatar-checkbox" class="avatar">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" id="monkey">
@@ -254,7 +251,6 @@
         </form>
     </div>
 
-    <!-- Toggle Container -->
     <div class="toggle-container">
         <div class="toggle">
             <div class="toggle-panel toggle-left">
@@ -272,21 +268,17 @@
 </div>
 
 <script>
-    // Toggle password visibility for Sign In
     document.getElementById('signin-toggle-password').addEventListener('change', function () {
         var passwordInput = document.getElementById('signin-password');
         passwordInput.type = this.checked ? 'text' : 'password';
     });
 
-    // Toggle password visibility for Sign Up
     document.getElementById('signup-toggle-password').addEventListener('change', function () {
         var passwordInput = document.getElementById('signup-password');
         passwordInput.type = this.checked ? 'text' : 'password';
     });
 
-    // Toggle monkey avatar animation
     document.getElementById('avatar-checkbox').addEventListener('change', function() {
-        // This is handled by CSS, no JS needed
     });
 </script>
 <script src="login page.js"></script>

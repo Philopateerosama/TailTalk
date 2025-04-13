@@ -26,7 +26,6 @@
             color: var(--primary-dark);
         }
 
-        /* Header Styles */
         header {
             background-color: var(--primary-light);
             padding: 2rem 1rem;
@@ -114,7 +113,6 @@
             transform: translateY(-2px);
         }
 
-        /* Services Section */
         .services-section {
             padding: 3rem 1rem;
             background-color: var(--secondary-light);
@@ -226,7 +224,6 @@
             background-color: var(--primary-dark);
         }
 
-        /* How It Works Section */
         .how-it-works {
             padding: 3rem 1rem;
             background-color: var(--primary-light);
@@ -300,7 +297,6 @@
             opacity: 0.8;
         }
 
-        /* Caregivers Section */
         .caregivers-section {
             padding: 3rem 1rem;
             background-color: var(--secondary-light);
@@ -428,7 +424,6 @@
             background-color: var(--primary-dark);
         }
 
-        /* Trust & Safety Section */
         .trust-section {
             padding: 3rem 1rem;
             background-color: var(--primary-light);
@@ -471,7 +466,6 @@
             opacity: 0.8;
         }
 
-        /* CTA Section */
         .cta-section {
             padding: 4rem 1rem;
             background-color: var(--primary-dark);
@@ -522,7 +516,6 @@
             color: var(--primary-dark);
         }
 
-        /* Footer */
         footer {
             background-color: var(--primary-dark);
             color: var(--secondary-light);
@@ -612,7 +605,6 @@
             font-size: 0.9rem;
         }
 
-        /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -949,23 +941,18 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Animate service cards
             const serviceCards = document.querySelectorAll('.service-card');
             animateElements(serviceCards, 0.2);
             
-            // Animate how it works steps
             const stepCards = document.querySelectorAll('.step-card');
             animateElements(stepCards, 0.2);
             
-            // Animate caregiver cards
             const caregiverCards = document.querySelectorAll('.caregiver-card');
             animateElements(caregiverCards, 0.2);
             
-            // Animate trust items
             const trustItems = document.querySelectorAll('.trust-item');
             animateElements(trustItems, 0.2);
             
-            // Function to animate elements when they come into view
             function animateElements(elements, delayIncrement) {
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach((entry, index) => {
@@ -985,7 +972,6 @@
                 });
             }
             
-            // Add hover effect to service cards
             serviceCards.forEach(card => {
                 card.addEventListener('mouseenter', function() {
                     this.style.transform = 'translateY(-10px)';
@@ -995,7 +981,6 @@
                 });
             });
             
-            // Add click effect to buttons
             const buttons = document.querySelectorAll('.service-btn, .caregiver-btn, .cta-btn');
             buttons.forEach(button => {
                 button.addEventListener('mousedown', function() {
@@ -1009,11 +994,9 @@
                 });
             });
             
-            // Search form submission
             const searchForm = document.querySelector('.search-form');
             searchForm.addEventListener('submit', function(e) {
                 e.preventDefault();
-                // In a real implementation, this would process the search
                 alert('Search functionality would be implemented here!');
             });
         });

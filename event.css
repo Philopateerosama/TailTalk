@@ -80,11 +80,11 @@ body {
     line-height: 1.6;
   }
   .card-img {
-    width: 100%; /* تجعل الصورة تأخذ عرض الكارت بالكامل */
-    height: 171px; /* تجعل الصورة تتناسب مع أبعادها */
-    margin-top: 10px; /* تترك مسافة صغيرة بعد الـ <span> */
-    border-radius: 15px; /* نفس الـ border-radius الخاص بالكارت */
-    object-fit: cover; /* تجعل الصورة تغطي المساحة بالكامل بدون تشويه */
+    width: 100%;
+    height: 171px;
+    margin-top: 10px;
+    border-radius: 15px;
+    object-fit: cover;
 }
 
 .button-Tail-event:hover {
