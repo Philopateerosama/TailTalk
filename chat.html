@@ -3,67 +3,316 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WhatsApp-like Chat</title>
-    <link rel="stylesheet" href="chat.css">
+    <title>Chat - TailTalk</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #FCF3EA;
+            height: 100vh;
+            display: flex;
+        }
+
+        .chat-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            overflow: hidden;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .sidebar {
+            width: 300px;
+            background-color: #DAD2BC;
+            padding: 20px;
+            border-right: 1px solid #9b8269;
+        }
+
+        .chat-header {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background-color: #9b8269;
+            color: #DAD2BC;
+        }
+
+        .chat-header h2 {
+            margin-left: 10px;
+        }
+
+        .chat-main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .messages-container {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background-color: #FCF3EA;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            max-width: 70%;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-20px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .message.sent {
+            margin-left: auto;
+            background-color: #9b8269;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 15px 15px 0 15px;
+        }
+
+        .message.received {
+            background-color: #DAD2BC;
+            color: #3c302a;
+            padding: 10px 15px;
+            border-radius: 15px 15px 15px 0;
+        }
+
+        .input-container {
+            padding: 20px;
+            background-color: white;
+            display: flex;
+            gap: 10px;
+            border-top: 1px solid #9b8269;
+        }
+
+        .input-container input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #9b8269;
+            border-radius: 25px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .input-container input:focus {
+            box-shadow: 0 0 5px rgba(155, 130, 105, 0.5);
+        }
+
+        .send-button {
+            background-color: #9b8269;
+            color: #DAD2BC;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .send-button:hover {
+            transform: scale(1.1);
+        }
+
+        .contact-list {
+            margin-top: 20px;
+        }
+
+        .contact {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact:hover {
+            background-color: #9b8269;
+            color: #DAD2BC;
+        }
+
+        .contact.active {
+            background-color: #9b8269;
+            color: #DAD2BC;
+        }
+
+        .contact-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #FCF3EA;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .contact-info h3 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .contact-info p {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .contact.active .contact-info p {
+            color: #DAD2BC;
+        }
+
+        .typing-indicator {
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .typing-indicator.visible {
+            opacity: 1;
+        }
+
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #9b8269;
+            border-radius: 50%;
+            margin-right: 5px;
+            animation: typing 1s infinite;
+        }
+
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typing {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-    <div class="sidebar sideLeft">
-        <h2>Contacts</h2>
-        <ul id="contactList">
-            <li data-contact="Alice" class="active">Alice</li>
-            <li data-contact="Bob">Bob</li>
-            <li data-contact="Charlie">Charlie</li>
-            <li data-contact="Diana">Diana</li>
-            <li data-contact="Eve">Eve</li>
-        </ul>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>WhatsApp-like Chat</title>
-  <link rel="stylesheet" href="chat.css" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-</head>
-<body>
-  <div class="container">
-    <div class="sidebar sideLeft">
-      <h2>Contacts</h2>
-      <ul id="contactList">
-        <li data-contact="Alice" class="active">Alice</li>
-        <li data-contact="Bob">Bob</li>
-        <li data-contact="Charlie">Charlie</li>
-        <li data-contact="Diana">Diana</li>
-        <li data-contact="Eve">Eve</li>
-      </ul>
+    <div class="chat-container">
+        <div class="sidebar">
+            <div class="contact-list">
+                <div class="contact active">
+                    <div class="contact-avatar">JD</div>
+                    <div class="contact-info">
+                        <h3>John Doe</h3>
+                        <p>Online</p>
+                    </div>
+                </div>
+                <div class="contact">
+                    <div class="contact-avatar">AS</div>
+                    <div class="contact-info">
+                        <h3>Alice Smith</h3>
+                        <p>Last seen 2h ago</p>
+                    </div>
+                </div>
+                <div class="contact">
+                    <div class="contact-avatar">MJ</div>
+                    <div class="contact-info">
+                        <h3>Mike Johnson</h3>
+                        <p>Last seen yesterday</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="chat-main">
+            <div class="chat-header">
+                <div class="contact-avatar">JD</div>
+                <h2>John Doe</h2>
+            </div>
+            <div class="messages-container">
+                <div class="message received">
+                    Hey there! How are you doing?
+                </div>
+                <div class="message sent">
+                    I'm good, thanks! How about you?
+                </div>
+                <div class="message received">
+                    Pretty good! Just working on some projects.
+                </div>
+                <div class="typing-indicator">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                </div>
+            </div>
+            <div class="input-container">
+                <input type="text" placeholder="Type a message...">
+                <button class="send-button">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
     </div>
 
-    <div class="chat-window">
-        <div class="chat-header">
-            <h2 id="chatContactName">Alice</h2>
-        </div>
-        <div class="chat-messages" id="chatMessages">
-        </div>
-        <div class="chat-input">
-            <input type="text" id="messageInput" placeholder="Type a message..." />
-            <button onclick="sendMessage()">Send</button>
-        </div>
-    </div>
-</div>
+    <script>
+        // Add typing animation
+        const typingIndicator = document.querySelector('.typing-indicator');
+        setInterval(() => {
+            typingIndicator.classList.toggle('visible');
+        }, 3000);
 
-<script src="chat.js"></script>
-      <div class="chat-header">
-        <h2 id="chatContactName">Alice</h2>
-      </div>
-      <div class="water-blur-bg" id="chatMessages">
-      </div>
-      <div class="chat-input">
-        <input type="text" id="messageInput" placeholder="Type a message..." />
-        <button onclick="sendMessage()">Send</button>
-      </div>
-    </div>
-  </div>
+        // Add message sending functionality
+        const input = document.querySelector('.input-container input');
+        const sendButton = document.querySelector('.send-button');
+        const messagesContainer = document.querySelector('.messages-container');
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
-  <script src="chat.js"></script>
+        function sendMessage() {
+            const message = input.value.trim();
+            if (message) {
+                const messageElement = document.createElement('div');
+                messageElement.className = 'message sent';
+                messageElement.textContent = message;
+                messagesContainer.appendChild(messageElement);
+                input.value = '';
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }
+        }
+
+        sendButton.addEventListener('click', sendMessage);
+        input.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // Add contact selection functionality
+        const contacts = document.querySelectorAll('.contact');
+        contacts.forEach(contact => {
+            contact.addEventListener('click', () => {
+                contacts.forEach(c => c.classList.remove('active'));
+                contact.classList.add('active');
+                const name = contact.querySelector('h3').textContent;
+                document.querySelector('.chat-header h2').textContent = name;
+            });
+        });
+    </script>
 </body>
 </html>

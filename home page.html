@@ -11,9 +11,8 @@
     <link rel="stylesheet" href="main.css">
 
     <style>
-        /* Add padding to the top of the main element to account for the fixed navbar */
         main {
-            padding-top: 70px; /* Adjust this value based on the height of your navbar */
+            padding-top: 70px;
         }
     </style>
 </head>
@@ -30,7 +29,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarButtons">
                 <div class="ms-auto d-flex gap-3">
-                    <a href="adopt.html" class="nav-link" style="color: #5F5449; padding-right: 10px;">Adopt</a>
                     <a href="chat.html" class="nav-link" style="color: #5F5449; padding-right: 10px;">Chat</a>
                     <a href="reminder.html" class="nav-link" style="color: #5F5449; padding-right: 10px;">Reminder</a>
                     <a href="events.html" class="nav-link" style="color: #5F5449; padding-right: 10px;">Events</a>
@@ -47,7 +45,6 @@
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
-            <!-- First slide with first-pic class -->
             <div class="carousel-item active first-pic">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>First slide label</h5>
@@ -55,7 +52,6 @@
                 </div>
             </div>
 
-            <!-- Second slide with second-pic-infooter class -->
             <div class="carousel-item second-pic-infooter">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Second slide label</h5>
@@ -63,7 +59,6 @@
                 </div>
             </div>
 
-            <!-- Third slide (you can add another class if needed) -->
             <div class="carousel-item third-pic-infooter">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>Third slide label</h5>
@@ -81,10 +76,6 @@
         </button>
     </div>
 
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
     <div class="container marketing market1">
         <div class="row market2">
             <div class="col-lg-4" style="padding-right: 100px;">
@@ -92,24 +83,23 @@
                 <h2 data-aos="fade-right" data-aos-duration="1400"  class="fw-normal">Freindly</h2>
                 <p data-aos="fade-right" data-aos-duration="1400" >These dogs are friendly, loving, and always ready to play. Perfect companions for anyone!</p>
                 <p><a data-aos="zoom-in" data-aos-duration="1400"  class="btn btn-secondary" href="more-details(friendly).html">View details »</a></p>
-            </div><!-- /.col-lg-4 -->
+            </div>
             <div class="col-lg-4 market2" style="padding-left: 100px;">
                 <div data-aos="zoom-in-left" data-aos-duration="1400"data-aos-delay="100" class="circle-image" style="background-image: url('img/circle-img-2.jpg');"></div>
                 <h2 data-aos="fade-up" data-aos-duration="1400"  class="fw-normal">Trained</h2>
                 <p data-aos="fade-up" data-aos-duration="1400" >All of our dogs are professionally trained and well-behaved, making them easy to manage and love.</p>
                 <p><a data-aos="zoom-in" data-aos-duration="1400"  class="btn btn-secondary" href="trained-more%20details.html">View details »</a></p>
-            </div><!-- /.col-lg-4 -->
+            </div>
             <div class="col-lg-4" style="padding-left: 150px;">
                 <div data-aos="zoom-in-left" data-aos-duration="1400"   class="circle-image" style="background-image: url('img/circle-img-3.jpg');"></div>
                 <h2 data-aos="fade-left" data-aos-duration="1400"  class="fw-normal">Beautiful</h2>
                 <p data-aos="fade-left" data-aos-duration="1400" >Our dogs are not only friendly but also stunning, with beautiful coats and charming personalities.</p>
-            </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
+            </div>
+        </div>
     </div>
 
 
 
-    <!-- START THE FEATURETTES -->
     <div class="feture-m">
         <hr class="featurette-divider">
 
@@ -168,17 +158,9 @@
 
             <hr class="featurette-divider">
         </div>
-
     </div>
-
-    <!-- /END THE FEATURETTES -->
     </div>
-
-
-    </div><!-- /.container -->
-
-
-    <!-- FOOTER -->
+    </div>
     <footer class="container">
         <p class="float-end" class="btn-lg"><a href="#">Back to top</a></p>
         <p>@ JPJ Team Master <a href="#">Privacy</a> · <a href="#">Terms</a></p>
@@ -188,16 +170,13 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 <script>
-    // تفعيل AOS عند تحميل الصفحة
     document.addEventListener('DOMContentLoaded', function() {
         AOS.init({
-            once: false, // الأنيميشن يحدث عند التمرير للعنصر أكثر من مرة
-            offset: 200, // المسافة التي تظهر فيها الأنيميشن بعد النزول
-            easing: 'ease-in-out', // تحسين تفاعل الأنيميشن مع التمرير
-            mirror: true, // يعيد الأنيميشن عند الرجوع
+            once: false,
+            offset: 200, 
+            easing: 'ease-in-out',
+            mirror: true, 
         });
-
-        // تحديث AOS يدويًا عند التمرير
         window.addEventListener('scroll', function() {
             AOS.refresh();
         });

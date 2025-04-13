@@ -278,6 +278,16 @@
         passwordInput.type = this.checked ? 'text' : 'password';
     });
 
+    document.getElementById('signin-password').addEventListener('input', function() {
+        const signInButton = document.querySelector('.sign-in .button-auth');
+        signInButton.disabled = this.value.length < 8;
+    });
+
+    document.getElementById('signup-password').addEventListener('input', function() {
+        const signUpButton = document.querySelector('.sign-up .button-auth');
+        signUpButton.disabled = this.value.length < 8;
+    });
+
     document.getElementById('avatar-checkbox').addEventListener('change', function() {
     });
 </script>
