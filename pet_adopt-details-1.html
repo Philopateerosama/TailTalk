@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buddy - Available for Adoption | TailTalk</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #9B8269;
+      --light: #FCF3EA;
+      --dark: #5F5449;
+      --secondary: #E0D9D2;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+      padding-top: 60px;
+    }
+    .navbar {
+      background-color: var(--light) !important;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .pet-header {
+      background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+      url('https://images.unsplash.com/photo-1586671267731-da2cf3ceeb80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80');
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      display: flex;
+      align-items: flex-end;
+      color: white;
+      padding: 30px;
+      margin-bottom: 40px;
+    }
+    .pet-title {
+      font-size: 3rem;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    .pet-badge {
+      background-color: var(--primary);
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .details-card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 25px;
+      margin-bottom: 30px;
+    }
+    .detail-item {
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #eee;
+    }
+    .detail-item:last-child {
+      border-bottom: none;
+    }
+    .btn-primary {
+      background-color: var(--primary);
+      border-color: var(--primary);
+    }
+    .btn-outline {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+    .btn-outline:hover {
+      background-color: var(--primary);
+      color: white;
+    }
+    .owner-card {
+      display: flex;
+      align-items: center;
+      background-color: #f9f5f0;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .owner-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 20px;
+    }
+    .gallery-thumb {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      border: 2px solid transparent;
+    }
+    .gallery-thumb.active {
+      border-color: var(--primary);
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <link rel="stylesheet" href="home page.css">
+  <link rel="stylesheet" href="pet-detiels.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="logo.png" alt="TailTalk" width="30" height="30" class="d-inline-block align-top">
+      <span class="fw-bold ms-2">TailTalk</span>
+    </a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="adopt.html">Adopt</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="pet-header">
+  <div>
+    <h1 class="pet-title" data-aos="fade-right" data-aos-duration="1400" >Buddy</h1>
+    <span data-aos="fade-up" data-aos-duration="1400" class="pet-badge">Adoption Ready</span>
+    <span data-aos="fade-up" data-aos-duration="1400" class="pet-badge">Good with Kids</span>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row" data-aos="fade-right" data-aos-duration="1400">
+    <div class="col-lg-8">
+      <div class="details-card">
+        <h3><i data-aos="zoom-in-right" data-aos-duration="1400" class="fas fa-paw me-2"></i> About Buddy</h3>
+        <p data-aos="zoom-in-right" data-aos-duration="1400" >Buddy is a 2-year-old Labrador mix with a heart of gold. He was rescued from a shelter where he was surrendered by his previous owners who could no longer care for him. Despite his rough start, Buddy is full of love and energy.</p>
+        <p data-aos="zoom-in-right" data-aos-duration="1400">He's house-trained, knows basic commands, and loves playing fetch. Buddy gets along well with other dogs and adores children. He would make a perfect companion for an active family or individual.</p>
+      </div>
+
+      <div class="details-card">
+        <h3><i class="fas fa-info-circle me-2"></i> Details</h3>
+        <div class="detail-item">
+          <strong>Breed:</strong> Labrador Retriever Mix
+        </div>
+        <div class="detail-item">
+          <strong>Age:</strong> 2 years
+        </div>
+        <div class="detail-item">
+          <strong>Size:</strong> Medium (55 lbs)
+        </div>
+        <div class="detail-item">
+          <strong>Gender:</strong> Male
+        </div>
+        <div class="detail-item">
+          <strong>Color:</strong> Golden
+        </div>
+        <div class="detail-item">
+          <strong>Vaccinations:</strong> Up to date
+        </div>
+        <div class="detail-item">
+          <strong>Spayed/Neutered:</strong> Yes
+        </div>
+        <div class="detail-item">
+          <strong>Temperament:</strong> Friendly, Energetic, Affectionate
+        </div>
+      </div>
+
+      <div class="details-card">
+        <h3><i class="fas fa-camera me-2"></i> Gallery</h3>
+        <div>
+          <img src="https://images.unsplash.com/photo-1586671267731-da2cf3ceeb80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+               class="gallery-thumb active"
+               onclick="changeMainImage(this.src)">
+          <img src="https://images.unsplash.com/photo-1561037404-61cd46aa615b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+               class="gallery-thumb"
+               onclick="changeMainImage(this.src)">
+          <img src="https://images.unsplash.com/photo-1544568100-847a948585b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+               class="gallery-thumb"
+               onclick="changeMainImage(this.src)">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="details-card">
+        <h3><i class="fas fa-heart me-2"></i> Adoption Info</h3>
+        <p>Includes neuter, vaccinations, microchip, and health check.</p>
+        <div class="d-grid gap-2 mt-4">
+          <button class="btn btn-primary btn-lg">Adopt Buddy</button>
+          <button class="btn btn-outline btn-lg">Contact Shelter</button>
+        </div>
+      </div>
+
+      <div class="details-card">
+        <h3><i class="fas fa-home me-2"></i> Shelter Info</h3>
+        <div class="owner-card">
+          <img src="https://randomuser.me/api/portraits/women/45.jpg" class="owner-avatar">
+          <div>
+            <h5>Happy Paws Shelter</h5>
+            <p><i class="fas fa-map-marker-alt me-2"></i> 123 Pet Street, New York</p>
+            <p><i class="fas fa-phone me-2"></i> (555) 123-4567</p>
+          </div>
+        </div>
+        <div class="mt-3">
+          <button class="btn btn-outline w-100">View All Pets from This Shelter</button>
+        </div>
+      </div>
+
+      <div class="details-card">
+        <h3><i class="fas fa-clock me-2"></i> Availability</h3>
+        <p><i class="fas fa-check-circle text-success me-2"></i> Available for adoption</p>
+        <p><strong>Meet & Greet:</strong> Required before adoption</p>
+        <p><strong>Adoption Process:</strong> Application → Interview → Home Visit</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="bg-dark text-white py-5 mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h5>TailTalk</h5>
+        <p>Connecting pets with loving homes since 2015.</p>
+      </div>
+      <div class="col-md-4">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white">Adoption Process</a></li>
+          <li><a href="#" class="text-white">Success Stories</a></li>
+          <li><a href="#" class="text-white">Volunteer</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5>Contact</h5>
+        <p><i class="fas fa-envelope me-2"></i> info@tailtalk.com</p>
+        <p><i class="fas fa-phone me-2"></i> (800) 555-1234</p>
+      </div>
+    </div>
+    <hr>
+    <div class="text-center">
+      <p>&copy; 2023 TailTalk. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  function changeMainImage(src) {
+    document.querySelector('.pet-header').style.backgroundImage = `linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('${src}')`;
+
+    // Update active thumbnail
+    document.querySelectorAll('.gallery-thumb').forEach(thumb => {
+      thumb.classList.remove('active');
+      if(thumb.src === src) {
+        thumb.classList.add('active');
+      }
+    });
+  }
+</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  // Initialize AOS
+  AOS.init({
+    duration: 800,
+    easing: 'ease-in-out',
+    once: false,
+    offset: 100
+  });
+
+  // Change main image when thumbnail is clicked
+  function changeImage(src) {
+    document.getElementById('mainImage').src = src;
+
+    // Update active thumbnail
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    thumbnails.forEach(thumb => {
+      thumb.classList.remove('active');
+      if (thumb.querySelector('img').src === src) {
+        thumb.classList.add('active');
+      }
+    });
+  }
+</script>
+</body>
+</html>

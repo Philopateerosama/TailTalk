@@ -33,7 +33,6 @@
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url('/TailTalk/img/img-1.jpeg');
     background-size: cover;
     background-position: center;
     filter: blur(20px);
@@ -94,21 +93,21 @@
 }
 .feture-m{
     margin-top: 10%;
-};
+}
 .carousel-inner img{
     background-size: cover;
 }
 .first-pic{
     height: 800px; /* Match your carousel height */
     width: 100%;
-    background-image:  url(https://images.unsplash.com/photo-1612176232942-4ceef9e9acb8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-image:  url(https://images.unsplash.com/photo-1612176232942-4ceef9e9acb8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)!important;
     background-size:cover;
     background-position: top;
 }
 .second-pic-infooter {
     height: 800px; /* Match your carousel height */
     width: 100%;
-    background-image: url(https://images.unsplash.com/photo-1597674078451-cdb78f43674f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-image: url(https://images.unsplash.com/photo-1597674078451-cdb78f43674f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) !important;
     background-size: cover;       /* Cover the entire container */
     background-position: center;  /* Center the image */
     background-repeat: no-repeat; /* Prevent repeating */
@@ -116,7 +115,7 @@
 .third-pic-infooter {
     height: 800px; /* Match your carousel height */
     width: 100%;
-    background-image: url(https://images.unsplash.com/photo-1693218746012-5f56bc96a157?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-image: url(https://images.unsplash.com/photo-1693218746012-5f56bc96a157?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) !important;
     background-size: cover;       /* Cover the entire container */
     background-position: center;  /* Center the image */
     background-repeat: no-repeat; /* Prevent repeating */
